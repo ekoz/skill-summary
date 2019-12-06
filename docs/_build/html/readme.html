@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>工作中的技能经验总结 &#8212; Read the Docs Template 1.0 documentation</title>
+    <title>Git &#8212; 工作中的技能经验总结 1.0 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -31,7 +31,7 @@
         <li class="right" >
           <a href="installation.html" title="Installation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Read the Docs Template 1.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">工作中的技能经验总结 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -40,12 +40,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="id1">
-<h1>工作中的技能经验总结<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="git">
-<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="git">
+<h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="svn-git">
-<h3>从 <cite>svn</cite> 迁移至 <cite>git</cite><a class="headerlink" href="#svn-git" title="Permalink to this headline">¶</a></h3>
+<h2>从 <cite>svn</cite> 迁移至 <cite>git</cite><a class="headerlink" href="#svn-git" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p><cite>git svn clone http://172.16.1.244/svn/xmas/src/kbase/kbase-workflow/trunk1.1 -r 20354:HEAD –no-metadata -trunk=trunk</cite></p></li>
 </ol>
@@ -61,12 +59,12 @@
 </ol>
 </div>
 <div class="section" id="git-clone">
-<h3>git clone 用法<a class="headerlink" href="#git-clone" title="Permalink to this headline">¶</a></h3>
+<h2>git clone 用法<a class="headerlink" href="#git-clone" title="Permalink to this headline">¶</a></h2>
 <p><cite>git clone -b branch_4x https://github.com/apache/lucene-solr.git ./lucene-solr-4.x</cite></p>
 <p><cite>git clone -b i18n https://github.com/PanJiaChen/vue-element-admin.git ./hs-cloud-app</cite></p>
 </div>
 <div class="section" id="git-archive">
-<h3>git archive 用法<a class="headerlink" href="#git-archive" title="Permalink to this headline">¶</a></h3>
+<h2>git archive 用法<a class="headerlink" href="#git-archive" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p><cite>git archive -o hot-fix-20151001.zip HEAD $(git diff 05104e3…a0eb9bc –name-only)</cite></p></li>
 <li><p>获取 fromId 到 endId 版本间修改过的文件，不包含fromId</p></li>
@@ -82,7 +80,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="git-cherry-pick">
-<h3>git cherry-pick 用法<a class="headerlink" href="#git-cherry-pick" title="Permalink to this headline">¶</a></h3>
+<h2>git cherry-pick 用法<a class="headerlink" href="#git-cherry-pick" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>把已经提交的commit, 从一个分支迁移到另一个分支</p>
 </div></blockquote>
@@ -90,12 +88,12 @@
 <p><cite>git cherry-pick 1a19304^..9874cd6</cite></p>
 </div>
 <div class="section" id="git-p4merge">
-<h3>git p4merge 安装文档<a class="headerlink" href="#git-p4merge" title="Permalink to this headline">¶</a></h3>
+<h2>git p4merge 安装文档<a class="headerlink" href="#git-p4merge" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.jianshu.com/p/bc059d2846c1">https://www.jianshu.com/p/bc059d2846c1</a></p>
 <p><a class="reference external" href="https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge">https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge</a></p>
 </div>
 <div class="section" id="git-rebase">
-<h3>git rebase 用法<a class="headerlink" href="#git-rebase" title="Permalink to this headline">¶</a></h3>
+<h2>git rebase 用法<a class="headerlink" href="#git-rebase" title="Permalink to this headline">¶</a></h2>
 <p><cite>git rebase -i HEAD~N</cite></p>
 <ol class="arabic simple">
 <li><p>i键入</p></li>
@@ -118,7 +116,7 @@
 </ol>
 </div>
 <div class="section" id="git-commit">
-<h3>git commit 规范<a class="headerlink" href="#git-commit" title="Permalink to this headline">¶</a></h3>
+<h2>git commit 规范<a class="headerlink" href="#git-commit" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>feat: 新功能（feature）</p></li>
 <li><p>fix: 修补bug</p></li>
@@ -131,11 +129,10 @@
 <p><strong>详见</strong>
 <a class="reference external" href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type">https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type</a></p>
 </div>
+</div>
 <div class="section" id="license">
-<h3>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h3>
+<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
 <p>The project is licensed under the MIT license.</p>
-</div>
-</div>
 </div>
 
 
@@ -146,8 +143,7 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">工作中的技能经验总结</a><ul>
-<li><a class="reference internal" href="#git">Git</a><ul>
+<li><a class="reference internal" href="#">Git</a><ul>
 <li><a class="reference internal" href="#svn-git">从 <cite>svn</cite> 迁移至 <cite>git</cite></a></li>
 <li><a class="reference internal" href="#git-clone">git clone 用法</a></li>
 <li><a class="reference internal" href="#git-archive">git archive 用法</a></li>
@@ -155,11 +151,9 @@
 <li><a class="reference internal" href="#git-p4merge">git p4merge 安装文档</a></li>
 <li><a class="reference internal" href="#git-rebase">git rebase 用法</a></li>
 <li><a class="reference internal" href="#git-commit">git commit 规范</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#license">License</a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
   <h4>Previous topic</h4>
@@ -201,11 +195,11 @@
         <li class="right" >
           <a href="installation.html" title="Installation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Read the Docs Template 1.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">工作中的技能经验总结 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2014, Read the Docs.
+        &#169; Copyright 2019, powered by ekoz.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.
     </div>
   </body>
