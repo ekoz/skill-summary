@@ -6,20 +6,10 @@
 工作中的技能经验总结
 ==================================================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
-   :glob:
-
-   *
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   
+   authors.rst
+   git.rst
+   license.rst
 

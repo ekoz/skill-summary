@@ -1,1 +1,4 @@
-.. include:: ../AUTHORS.rst
+作者
+-------
+
+* `Ekozhan <http://ekozhan.com>`_ 
