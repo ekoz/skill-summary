@@ -11,5 +11,7 @@
    
    authors.rst
    git.rst
+   linux.rst
+   docker.rst
    license.rst
 

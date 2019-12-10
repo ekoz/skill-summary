@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Linux（以CentOS7.2为主） &#8212; 工作中的技能经验总结 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Docker" href="docker.html" />
+    <link rel="prev" title="Git" href="git.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="docker.html" title="Docker"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="git.html" title="Git"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">工作中的技能经验总结 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="linux-centos7-2">
+<h1>Linux（以CentOS7.2为主）<a class="headerlink" href="#linux-centos7-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>装机必备<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>yum 源</p></li>
+<li><p>docker</p></li>
+<li><p>docker-compose</p></li>
+<li><p>python2.7 与 python3.6 兼容</p></li>
+<li><p>防火墙</p></li>
+<li><p>jdk</p></li>
+<li><p>gcc</p></li>
+<li><p>sudoers 与 755</p></li>
+</ul>
+</div>
+<div class="section" id="yum">
+<h2>国内 yum 源<a class="headerlink" href="#yum" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.runoob.com/linux/linux-yum.html">https://www.runoob.com/linux/linux-yum.html</a></p>
+<p><a class="reference external" href="http://mirrors.163.com/.help/centos.html">http://mirrors.163.com/.help/centos.html</a></p>
+</div>
+<div class="section" id="id2">
+<h2>防火墙<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>centOS7永久关闭防火墙(防火墙的基本使用)</p></li>
+</ol>
+<p><a class="reference external" href="https://blog.csdn.net/ViJayThresh/article/details/81284007">https://blog.csdn.net/ViJayThresh/article/details/81284007</a></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看状态</span>
+systemctl status firewalld.service
+<span class="c1"># 关闭防火墙</span>
+systemctl stop firewalld.service
+<span class="c1"># 开启防火墙</span>
+systemctl start firewalld.service
+<span class="c1"># 设置开机启动</span>
+systemctl <span class="nb">enable</span> firewalld.service
+<span class="c1"># 禁止开机启动</span>
+systemctl disable firewalld.service
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>CentOS7查看和关闭防火墙</p></li>
+</ol>
+<p><a class="reference external" href="https://blog.csdn.net/ytangdigl/article/details/79796961">https://blog.csdn.net/ytangdigl/article/details/79796961</a></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>firewall-cmd --state
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>CentOS防火墙添加例外端口</p></li>
+</ol>
+<p><a class="reference external" href="https://blog.csdn.net/jiankunking/article/details/78794383">https://blog.csdn.net/jiankunking/article/details/78794383</a></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看状态</span>
+firewall-cmd --state
+
+<span class="c1"># 添加 8080 例外端口</span>
+firewall-cmd --permanent --zone<span class="o">=</span>public --add-port<span class="o">=</span><span class="m">8080</span>/tcp
+
+<span class="c1"># 重新加载</span>
+firewall-cmd --reload
+</pre></div>
+</div>
+</div>
+<div class="section" id="jdk">
+<h2>jdk安装<a class="headerlink" href="#jdk" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>解压jdk-xxx-linux-x64.tar.gz，将解压的jdk目录移动到/opt下</p></li>
+<li><p>编辑 <cite>/etc/profile</cite></p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo vim /etc/profile
+
+<span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/opt/jdk1.7.0_55
+
+<span class="c1"># $PATH 放在结束位置，否则会被系统自带的openjdk 覆盖</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span>
+
+<span class="nb">source</span> /etc/profile
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>运行 <cite>java -version</cite> 得到正确的版本</p></li>
+</ol>
+<p><strong>注意</strong></p>
+<p>如果jdk是bin文件，直接 <cite>chmod 755</cite>，然后 <cite>./bin</cite> 解压，接下来参考上面的步骤配置环境变量。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>chmod <span class="m">755</span> jdk-6u27-linux-x64.bin
+
+./jdk-6u27-linux-x64.bin &gt; /tmp/null
+</pre></div>
+</div>
+</div>
+<div class="section" id="tar">
+<h2>tar 命令<a class="headerlink" href="#tar" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解压</span>
+tar –zxvf xxx.tar.gz
+<span class="c1"># 压缩</span>
+tar –zcvf xxx.tar.gz
+</pre></div>
+</div>
+<p>或者</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 压缩</span>
+zip -r kbase-converter.zip kbase-converter/* -x <span class="s2">&quot;kbase-converter/DATAS*&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sudoers">
+<h2>用户和组权限 sudoers<a class="headerlink" href="#sudoers" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>基本用法</p></li>
+</ol>
+<ul class="simple">
+<li><p>创建组 <cite>groupadd g_normal</cite></p></li>
+<li><p>创建用户 <cite>useradd -g g_normal u_search</cite></p></li>
+<li><p>修改密码 <cite>passwd u_search</cite></p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>将用户 u_search 加入到 docker 组</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>groupadd docker
+usermod -aG docker u_search
+systemctl restart docker
+<span class="c1"># 查询当前用户所属的所有组</span>
+groups
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>文件权限操作</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 改变filename的所有者为xiaoming</span>
+chown xiaoming filename
+
+<span class="c1"># 改变filename所属的组为root</span>
+chgrp root filename
+
+<span class="c1"># 改变dirname这个目录的所有者是root</span>
+chown root ./dirname
+
+<span class="c1"># 改变dirname这个目录及其下面所的文件和目录的所有者是root</span>
+chown ‐R root ./dirname
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>设置 sudo</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>whereis sudoers
+
+chmod -v u+w /etc/sudoers
+
+vim /etc/sudoers
+
+<span class="c1">#这个是新用户</span>
+u_search <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> ALL
+
+chmod -v u-w /etc/sudoers
+</pre></div>
+</div>
+</div>
+<div class="section" id="scp">
+<h2>scp 传输文件<a class="headerlink" href="#scp" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 传输文件</span>
+scp -r -P <span class="m">12598</span> lucy <span class="m">172</span>.16.9.55:/home/eko_0807/
+
+<span class="c1"># 拉取文件</span>
+scp -r -P <span class="m">12598</span> ekozhan@172.16.9.55:/home/ekozhan/demo.tar.gz /home/eko_0807/
+</pre></div>
+</div>
+<p><strong>注意</strong></p>
+<p><cite>scp</cite> 命令和 <cite>ssh</cite> 命令类似，记住一个，另一个妥妥的</p>
+</div>
+<div class="section" id="ssh-ssh">
+<h2>ssh &amp; ssh 免密登录<a class="headerlink" href="#ssh-ssh" title="Permalink to this headline">¶</a></h2>
+<p>当前服务器ip：192.168.1.200</p>
+<p>目标服务器ip：192.168.1.210</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ssh -l hadoop <span class="m">172</span>.16.9.55 -p <span class="m">12598</span>
+</pre></div>
+</div>
+<p>或者</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ssh -p <span class="m">5060</span> eko.zhan@172.16.9.55
+</pre></div>
+</div>
+<p>设置免密登录</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ssh-keygen -t rsa
+ssh-copy-id -i id_rsa.pub -p <span class="m">12598</span> eko.zhan@192.168.1.210
+
+<span class="c1"># 注意修改 sshd_config 中的参数</span>
+/etc/ssh/sshd_config
+RSAAuthentication yes
+PubkeyAuthentication yes
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>查目录包含子目录大小<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>du -hsx * <span class="p">|</span> sort -rh <span class="p">|</span> head -10
+
+du -h --max-depth<span class="o">=</span><span class="m">1</span> .
+</pre></div>
+</div>
+</div>
+<div class="section" id="find">
+<h2>find 命令<a class="headerlink" href="#find" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查找文件名称包含 `.class` 的文件</span>
+find . -name <span class="s1">&#39;*.class&#39;</span> -newermt <span class="s1">&#39;2017-06-09&#39;</span>
+
+<span class="c1"># 查找文件名称包含 `.class` 的文件，并将内容写入 /app/ekozhan 文件中</span>
+find . -name <span class="s1">&#39;*.class&#39;</span> -newermt <span class="s1">&#39;2017-06-09&#39;</span> <span class="p">|</span>xargs -i cp <span class="o">{}</span> /app/ekozhan
+
+<span class="c1"># 统计 java 代码行数</span>
+find . -name *.java <span class="p">|</span>xargs cat<span class="p">|</span>grep -v ^$<span class="p">|</span>wc -l
+
+find . -type f <span class="p">|</span>xargs cat<span class="p">|</span>grep -v <span class="s2">&quot;^</span>$<span class="s2">&quot;</span><span class="p">|</span>grep -v <span class="s2">&quot;^/&quot;</span><span class="p">|</span>wc -l
+
+find . -name *.java <span class="p">|</span>xargs cat<span class="p">|</span>grep -v <span class="s2">&quot;^</span>$<span class="s2">&quot;</span><span class="p">|</span>grep -v <span class="s2">&quot;^/&quot;</span><span class="p">|</span>wc -l
+
+find . -name *.htm* -o -name *.js* -o -name *.java <span class="p">|</span>xargs cat<span class="p">|</span>grep -v <span class="s2">&quot;^</span>$<span class="s2">&quot;</span><span class="p">|</span>grep -v <span class="s2">&quot;^/&quot;</span><span class="p">|</span>wc -l
+
+<span class="c1"># 查找所有包含 `.png.txt` 的文件并删除</span>
+find ./ -name <span class="s1">&#39;*.png.txt&#39;</span> <span class="p">|</span>xargs rm -rf
+
+<span class="c1"># 查找所有包含 `.png.txt` 的文件（忽略大小写）并删除</span>
+find ./ -iname <span class="s1">&#39;*.png.txt&#39;</span> <span class="p">|</span>xargs rm -rf
+</pre></div>
+</div>
+</div>
+<div class="section" id="cat">
+<h2>cat 高级用法<a class="headerlink" href="#cat" title="Permalink to this headline">¶</a></h2>
+<p>查找日志中包含 <cite>read time out</cite> 的文本，不区分大小写</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat 2018_02_05.stdout.log <span class="p">|</span>grep -i <span class="s2">&quot;read timed out&quot;</span>
+</pre></div>
+</div>
+<p>查找日志中包含 <cite>Exception</cite>，不包含 <cite>hibernate</cite> <cite>filter</cite> <cite>stream</cite> 的文本</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat 2018_02_05.stdout.log <span class="p">|</span>grep Exception<span class="p">|</span>grep -vi hibernate<span class="p">|</span>grep -vi filter<span class="p">|</span>grep -vi stream
+</pre></div>
+</div>
+<p>查看日志，从第 80780 行开始，显示 100 行</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat -n 2018_02_05.stdout.log<span class="p">|</span>tail -n +80780<span class="p">|</span>head -n <span class="m">100</span>
+</pre></div>
+</div>
+<p>查看日志包含 <cite>Exception</cite> 的本文，上下3行</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat debug.log <span class="p">|</span>grep -C <span class="m">3</span> Exception
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>杀进程<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">kill</span> -9 <span class="sb">`</span>ps -ef<span class="p">|</span>grep java<span class="p">|</span>grep -v grep<span class="p">|</span>grep kbase-conference<span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+
+ps -ef<span class="p">|</span>grep soffice<span class="p">|</span>grep -v grep<span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="p">|</span>xargs <span class="nb">kill</span> -9
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>创建软连接<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ln -s /mnt/disk0/xiaoi /xiaoi
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>重启关机记录排查<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>last<span class="p">|</span>grep reboot
+history<span class="p">|</span>grep reboot
+cat /var/log/messages
+</pre></div>
+</div>
+</div>
+<div class="section" id="close-wait">
+<h2>CLOSE_WAIT<a class="headerlink" href="#close-wait" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>netstat -n <span class="p">|</span> awk <span class="s1">&#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&#39;</span>
+
+<span class="c1"># 客户端连接数量，Connection Refused，最大数 65535</span>
+netstat -nat<span class="p">|</span>grep -i <span class="m">8080</span><span class="p">|</span>wc -l
+</pre></div>
+</div>
+<p><a class="reference external" href="https://blog.csdn.net/duan19056/article/details/51210110">https://blog.csdn.net/duan19056/article/details/51210110</a></p>
+</div>
+<div class="section" id="crontab">
+<h2>crontab 定时任务<a class="headerlink" href="#crontab" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>crontab -e <span class="m">0</span> <span class="m">1</span> * * * /usr/bin/python3 /home/yogurt/XinhuaSpider.py &gt;&gt; /home/yogurt/spider.out
+
+crontab -e <span class="m">59</span> <span class="m">23</span> * * * rm -rf /tmp/lu*.tmp /tmp/webdav*.log
+
+crontab -e <span class="m">30</span> <span class="m">0</span> * * * find /tmp/lu*.tmp -ctime <span class="m">0</span> -exec rm -rf <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>修改时间<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>date -s <span class="s2">&quot;2015-08-11 13:06:30&quot;</span>
+clock -w
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>源码安装样例<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget http://memcached.org/latest
+tar -zxvf memcached-1.x.x.tar.gz
+
+<span class="nb">cd</span> memcached-1.x.x
+
+./configure <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make <span class="nb">test</span> <span class="o">&amp;&amp;</span> sudo make install
+</pre></div>
+</div>
+</div>
+<div class="section" id="debian-centos">
+<h2>Debian 与 CentOS 语法差异<a class="headerlink" href="#debian-centos" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Debian/Ubuntu: apt-get install libevent-dev
+
+Redhat/Centos: yum install libevent-devel
+</pre></div>
+</div>
+</div>
+<div class="section" id="gcc">
+<h2>gcc<a class="headerlink" href="#gcc" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>yum -y install gcc
+</pre></div>
+</div>
+</div>
+<div class="section" id="hostname">
+<h2>hostname修改<a class="headerlink" href="#hostname" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>hostname</p></li>
+<li><p>hostnamectl set-hostname ibotplus</p></li>
+<li><p>vim /etc/hosts</p></li>
+</ol>
+</div>
+<div class="section" id="python2-7-python3-6">
+<h2>python2.7 与 python3.6 兼容<a class="headerlink" href="#python2-7-python3-6" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://linuxize.com/post/how-to-install-python-3-on-centos-7/">https://linuxize.com/post/how-to-install-python-3-on-centos-7/</a></p>
+</div>
+<div class="section" id="docker">
+<h2>Docker 安装<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
+<p>详见</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>查看版本<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>uname -a
+cat /etc/redhat-release
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Linux（以CentOS7.2为主）</a><ul>
+<li><a class="reference internal" href="#id1">装机必备</a></li>
+<li><a class="reference internal" href="#yum">国内 yum 源</a></li>
+<li><a class="reference internal" href="#id2">防火墙</a></li>
+<li><a class="reference internal" href="#jdk">jdk安装</a></li>
+<li><a class="reference internal" href="#tar">tar 命令</a></li>
+<li><a class="reference internal" href="#sudoers">用户和组权限 sudoers</a></li>
+<li><a class="reference internal" href="#scp">scp 传输文件</a></li>
+<li><a class="reference internal" href="#ssh-ssh">ssh &amp; ssh 免密登录</a></li>
+<li><a class="reference internal" href="#id3">查目录包含子目录大小</a></li>
+<li><a class="reference internal" href="#find">find 命令</a></li>
+<li><a class="reference internal" href="#cat">cat 高级用法</a></li>
+<li><a class="reference internal" href="#id4">杀进程</a></li>
+<li><a class="reference internal" href="#id5">创建软连接</a></li>
+<li><a class="reference internal" href="#id6">重启关机记录排查</a></li>
+<li><a class="reference internal" href="#close-wait">CLOSE_WAIT</a></li>
+<li><a class="reference internal" href="#crontab">crontab 定时任务</a></li>
+<li><a class="reference internal" href="#id7">修改时间</a></li>
+<li><a class="reference internal" href="#id8">源码安装样例</a></li>
+<li><a class="reference internal" href="#debian-centos">Debian 与 CentOS 语法差异</a></li>
+<li><a class="reference internal" href="#gcc">gcc</a></li>
+<li><a class="reference internal" href="#hostname">hostname修改</a></li>
+<li><a class="reference internal" href="#python2-7-python3-6">python2.7 与 python3.6 兼容</a></li>
+<li><a class="reference internal" href="#docker">Docker 安装</a></li>
+<li><a class="reference internal" href="#id9">查看版本</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="git.html"
+                        title="previous chapter">Git</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="docker.html"
+                        title="next chapter">Docker</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/linux.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="docker.html" title="Docker"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="git.html" title="Git"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">工作中的技能经验总结 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, powered by ekoz.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.
+    </div>
+  </body>
+</html>
