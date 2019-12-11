@@ -366,6 +366,19 @@ hostname修改
 
 python2.7 与 python3.6 兼容
 ==============================
+
+CentOS7.2 安装 pip 以及升级
+
+.. code:: sh
+
+  yum -y install epel-release
+
+  yum -y install python-pip
+
+  pip install --upgrade pip
+
+python2.7 与 python3.6 兼容
+
 https://linuxize.com/post/how-to-install-python-3-on-centos-7/
 
 Docker 安装
