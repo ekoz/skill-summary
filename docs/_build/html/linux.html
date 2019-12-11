@@ -237,26 +237,30 @@ du -h --max-depth<span class="o">=</span><span class="m">1</span> .
 </div>
 <div class="section" id="find">
 <h2>find 命令<a class="headerlink" href="#find" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查找文件名称包含 `.class` 的文件</span>
-find . -name <span class="s1">&#39;*.class&#39;</span> -newermt <span class="s1">&#39;2017-06-09&#39;</span>
-
-<span class="c1"># 查找文件名称包含 `.class` 的文件，并将内容写入 /app/ekozhan 文件中</span>
-find . -name <span class="s1">&#39;*.class&#39;</span> -newermt <span class="s1">&#39;2017-06-09&#39;</span> <span class="p">|</span>xargs -i cp <span class="o">{}</span> /app/ekozhan
-
-<span class="c1"># 统计 java 代码行数</span>
-find . -name *.java <span class="p">|</span>xargs cat<span class="p">|</span>grep -v ^$<span class="p">|</span>wc -l
+<p>查找文件名称包含 <cite>.class</cite> 的文件</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find . -name <span class="s1">&#39;*.class&#39;</span> -newermt <span class="s1">&#39;2017-06-09&#39;</span>
+</pre></div>
+</div>
+<p>查找文件名称包含 <cite>.class</cite> 的文件，并将内容写入 /app/ekozhan 文件中</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find . -name <span class="s1">&#39;*.class&#39;</span> -newermt <span class="s1">&#39;2017-06-09&#39;</span> <span class="p">|</span>xargs -i cp <span class="o">{}</span> /app/ekozhan
+</pre></div>
+</div>
+<p>统计 java 代码行数</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find . -name *.java <span class="p">|</span>xargs cat<span class="p">|</span>grep -v ^$<span class="p">|</span>wc -l
 
 find . -type f <span class="p">|</span>xargs cat<span class="p">|</span>grep -v <span class="s2">&quot;^</span>$<span class="s2">&quot;</span><span class="p">|</span>grep -v <span class="s2">&quot;^/&quot;</span><span class="p">|</span>wc -l
 
 find . -name *.java <span class="p">|</span>xargs cat<span class="p">|</span>grep -v <span class="s2">&quot;^</span>$<span class="s2">&quot;</span><span class="p">|</span>grep -v <span class="s2">&quot;^/&quot;</span><span class="p">|</span>wc -l
 
 find . -name *.htm* -o -name *.js* -o -name *.java <span class="p">|</span>xargs cat<span class="p">|</span>grep -v <span class="s2">&quot;^</span>$<span class="s2">&quot;</span><span class="p">|</span>grep -v <span class="s2">&quot;^/&quot;</span><span class="p">|</span>wc -l
-
-<span class="c1"># 查找所有包含 `.png.txt` 的文件并删除</span>
-find ./ -name <span class="s1">&#39;*.png.txt&#39;</span> <span class="p">|</span>xargs rm -rf
-
-<span class="c1"># 查找所有包含 `.png.txt` 的文件（忽略大小写）并删除</span>
-find ./ -iname <span class="s1">&#39;*.png.txt&#39;</span> <span class="p">|</span>xargs rm -rf
+</pre></div>
+</div>
+<p>查找所有包含 <cite>.png.txt</cite> 的文件并删除</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find ./ -name <span class="s1">&#39;*.png.txt&#39;</span> <span class="p">|</span>xargs rm -rf
+</pre></div>
+</div>
+<p>查找所有包含 <cite>.png.txt</cite> 的文件（忽略大小写）并删除</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find ./ -iname <span class="s1">&#39;*.png.txt&#39;</span> <span class="p">|</span>xargs rm -rf
 </pre></div>
 </div>
 </div>

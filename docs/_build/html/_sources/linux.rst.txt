@@ -211,15 +211,22 @@ ssh & ssh 免密登录
 find 命令
 ===========
 
+查找文件名称包含 `.class` 的文件 
+
 .. code:: sh
 
-  # 查找文件名称包含 `.class` 的文件 
   find . -name '*.class' -newermt '2017-06-09'
 
-  # 查找文件名称包含 `.class` 的文件，并将内容写入 /app/ekozhan 文件中
+查找文件名称包含 `.class` 的文件，并将内容写入 /app/ekozhan 文件中
+
+.. code:: sh
+
   find . -name '*.class' -newermt '2017-06-09' |xargs -i cp {} /app/ekozhan
 
-  # 统计 java 代码行数
+统计 java 代码行数
+
+.. code:: sh
+
   find . -name *.java |xargs cat|grep -v ^$|wc -l
 
   find . -type f |xargs cat|grep -v "^$"|grep -v "^/"|wc -l
@@ -228,10 +235,16 @@ find 命令
 
   find . -name *.htm* -o -name *.js* -o -name *.java |xargs cat|grep -v "^$"|grep -v "^/"|wc -l
 
-  # 查找所有包含 `.png.txt` 的文件并删除
+查找所有包含 `.png.txt` 的文件并删除
+
+.. code:: sh
+
   find ./ -name '*.png.txt' |xargs rm -rf
 
-  # 查找所有包含 `.png.txt` 的文件（忽略大小写）并删除
+查找所有包含 `.png.txt` 的文件（忽略大小写）并删除
+
+.. code:: sh
+
   find ./ -iname '*.png.txt' |xargs rm -rf
 
 cat 高级用法
