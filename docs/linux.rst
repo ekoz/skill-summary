@@ -391,6 +391,12 @@ Docker 安装
    docker.rst
 
 
+ulimit
+==================
+
+`/etc/security/limits.d/90-nproc.conf`
+
+
 查看版本
 =========
 
