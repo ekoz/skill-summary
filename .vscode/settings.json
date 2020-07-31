@@ -1,21 +1,15 @@
 {
   "editor.formatOnSave": true,
+  "python.pythonPath": "D:/Programs/Anaconda3/envs/python36/python.exe",
   "python.linting.enabled": true,
   "python.linting.lintOnSave": false,
-  "python.autoComplete.addBrackets": true,
-  "python.linting.pylintEnabled": false,
+  "python.linting.pylintEnabled": true,
   "python.linting.pylintArgs": [
     "--include-naming-hint=n",
     "--disable=W0311",
     "--disable=C0103",
     "--disable=E1101"
   ],
-  "python.linting.flake8Enabled": true,
-  "python.formatting.autopep8Args": [
-    "--ignore=E402",
-    "--ignore=E501",
-    "--max-line-length=200"
-  ],
-  "python.pythonPath": "D:\\Programs\\Anaconda3\\envs\\python36\\python.exe",
-  "editor.fontSize": 22
+  "editor.fontSize": 28,
+  "python.formatting.provider": "black"
 }

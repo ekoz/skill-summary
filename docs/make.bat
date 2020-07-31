@@ -1,7 +1,7 @@
 @ECHO OFF
 
 REM Command file for Sphinx documentation
-
+set SPHINXBUILD="D:\Programs\Anaconda3\envs\python36\Scripts\sphinx-build"
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
