@@ -12,5 +12,6 @@
    authors
    git
    linux
+   docker
    license
 
