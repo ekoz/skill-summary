@@ -381,6 +381,8 @@ python2.7 与 python3.6 兼容
 
 https://linuxize.com/post/how-to-install-python-3-on-centos-7/
 
+推荐使用 conda
+
 Docker 安装
 ===============
 详见 

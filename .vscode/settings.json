@@ -1,6 +1,5 @@
 {
   "editor.formatOnSave": true,
-  "python.pythonPath": "D:/Programs/Anaconda3/envs/python36/python.exe",
   "python.linting.enabled": true,
   "python.linting.lintOnSave": false,
   "python.linting.pylintEnabled": true,
@@ -11,5 +10,6 @@
     "--disable=E1101"
   ],
   "editor.fontSize": 28,
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "restructuredtext.confPath": "${workspaceFolder}\\docs"
 }

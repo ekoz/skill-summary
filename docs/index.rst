@@ -9,9 +9,8 @@
 .. toctree::
    :maxdepth: 2
    
-   authors.rst
-   git.rst
-   linux.rst
-   docker.rst
-   license.rst
+   authors
+   git
+   linux
+   license
 

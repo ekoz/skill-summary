@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Docker &#8212; 工作中的技能经验总结 1.0 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,9 +16,7 @@
     <script src="_static/language_data.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="License" href="license.html" />
-    <link rel="prev" title="Linux（以CentOS7.2为主）" href="linux.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,14 +24,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="license.html" title="License"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="linux.html" title="Linux（以CentOS7.2为主）"
-             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">工作中的技能经验总结 1.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="linux.html" accesskey="U">Linux（以CentOS7.2为主）</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Docker</a></li> 
       </ul>
     </div>  
@@ -45,146 +36,130 @@
             
   <div class="section" id="docker">
 <h1>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="centos7-2docker">
-<h2>centos7.2安装docker<a class="headerlink" href="#centos7-2docker" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>yum install docker
+<div class="section" id="centos7-2-docker">
+<h2>centos7.2 安装 docker<a class="headerlink" href="#centos7-2-docker" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">yum</span> <span class="n">install</span> <span class="n">docker</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://www.jianshu.com/p/232bc2c1e95d">https://www.jianshu.com/p/232bc2c1e95d</a></p>
-<div class="section" id="dockerselinux">
-<h3>在docker里禁用selinux<a class="headerlink" href="#dockerselinux" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>vim /etc/sysconfig/docker
---selinux-enabled<span class="o">=</span><span class="nb">false</span>
+<p>https://www.jianshu.com/p/232bc2c1e95d</p>
+<p>在 docker 里禁用 selinux</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">docker</span>
+<span class="o">--</span><span class="n">selinux</span><span class="o">-</span><span class="n">enabled</span><span class="o">=</span><span class="n">false</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://www.cnblogs.com/hongdada/p/8886893.html">https://www.cnblogs.com/hongdada/p/8886893.html</a></p>
-</div>
-<div class="section" id="centos7docker">
-<h3>centos7安装docker并设置开机启动<a class="headerlink" href="#centos7docker" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>systemctl <span class="nb">enable</span> docker
+<p>https://www.cnblogs.com/hongdada/p/8886893.html</p>
+<p>centos7 安装 docker 并设置开机启动</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">enable</span> <span class="n">docker</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://www.cnblogs.com/rwxwsblog/p/5436445.html">https://www.cnblogs.com/rwxwsblog/p/5436445.html</a></p>
-</div>
-<div class="section" id="id1">
-<h3>docker启动，重启，关闭命令<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo service docker start
+<p>https://www.cnblogs.com/rwxwsblog/p/5436445.html</p>
+<p>docker 启动，重启，关闭命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">docker</span> <span class="n">start</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://blog.csdn.net/EasternUnbeaten/article/details/80463837">https://blog.csdn.net/EasternUnbeaten/article/details/80463837</a></p>
+<p>https://blog.csdn.net/EasternUnbeaten/article/details/80463837</p>
 </div>
 <div class="section" id="docker-compose">
-<h3>docker-compose 安装<a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://github.com/docker/compose/releases">https://github.com/docker/compose/releases</a></p>
+<h2>docker-compose 安装<a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h2>
+<p>https://github.com/docker/compose/releases</p>
 </div>
-</div>
-<div class="section" id="id2">
-<h2>Docker 镜像与容器<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>拉取镜像<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
+<div class="section" id="id1">
+<h2>Docker 镜像与容器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>拉取镜像</p>
+<ol class="simple">
 <li><p>docker search nginx</p></li>
 <li><p>docker pull nginx</p></li>
 <li><p>docker run -p 80:80 –name ng_container -d nginx</p></li>
 </ol>
-</div>
-<div class="section" id="docker-none">
-<h3>Docker 删除 &lt;none&gt; 镜像<a class="headerlink" href="#docker-none" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker rmi <span class="k">$(</span>docker images <span class="p">|</span> grep <span class="s2">&quot;^&lt;none&gt;&quot;</span> <span class="p">|</span> awk <span class="s2">&quot;{print </span><span class="nv">$3</span><span class="s2">}&quot;</span><span class="k">)</span>
+<p>Docker 删除 <none> 镜像</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker rmi $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &quot;{print $3}&quot;)
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>Docker 运行容器<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Docker 运行容器</p>
 <ul class="simple">
-<li><p>-d: 后台运行容器，并返回容器ID</p></li>
-<li><p>-v: 主机的目录/app/tomcat/webapps映射到容器的/app/tomcat/webapps</p></li>
+<li><p>-d: 后台运行容器，并返回容器 ID</p></li>
+<li><p>-v: 主机的目录/app/tomcat/webapps 映射到容器的/app/tomcat/webapps</p></li>
 <li><p>-t：进入终端</p></li>
-<li><p>-i：获得一个交互式的连接，通过获取container的输入</p></li>
+<li><p>-i：获得一个交互式的连接，通过获取 container 的输入</p></li>
 </ul>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker run -d -p <span class="m">8080</span>:8080 -p <span class="m">8009</span>:8009 -v /app/tomcat/webapps:/app/tomcat/webapps tomcat
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run -d -p 8080:8080 -p 8009:8009 -v /app/tomcat/webapps:/app/tomcat/webapps tomcat
 
-docker run -p <span class="m">80</span>:80 --name ng_container -v <span class="nv">$PWD</span>/www:/www -v <span class="nv">$PWD</span>/conf/nginx.conf:/etc/nginx/nginx.conf -v <span class="nv">$PWD</span>/logs:/www/logs  -d nginx
+docker run -p 80:80 --name ng_container -v $PWD/www:/www -v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf -v \$PWD/logs:/www/logs -d nginx
 </pre></div>
 </div>
-</div>
-<div class="section" id="id5">
-<h3>Docker 进入容器<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> -it container_id bash
-docker <span class="nb">exec</span> -it container_name /sh
+<p>Docker 进入容器</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">exec</span> <span class="o">-</span><span class="n">it</span> <span class="n">container_id</span> <span class="n">bash</span>
+<span class="n">docker</span> <span class="n">exec</span> <span class="o">-</span><span class="n">it</span> <span class="n">container_name</span> <span class="o">/</span><span class="n">sh</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>Docker 退出容器<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Docker 退出容器</p>
 <ul class="simple">
 <li><p>exit</p></li>
 <li><p>CTRL+D</p></li>
 </ul>
-</div>
-<div class="section" id="id7">
-<h3>Docker 删除容器<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker ps -a
+<p>Docker 删除容器</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">ps</span> <span class="o">-</span><span class="n">a</span>
 
-docker stop container_id
-docker rm container_id
-
-<span class="c1"># docker同时删除停止的容器</span>
-docker rm <span class="k">$(</span>docker container ls -f <span class="s2">&quot;status=exited&quot;</span> -q<span class="k">)</span>
+<span class="n">docker</span> <span class="n">stop</span> <span class="n">container_id</span>
+<span class="n">docker</span> <span class="n">rm</span> <span class="n">container_id</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="docker-ifconfig-netstat-ping-vim">
-<h3>Docker 容器内安装 ifconfig netstat ping vim 等测试工具的方法<a class="headerlink" href="#docker-ifconfig-netstat-ping-vim" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://blog.csdn.net/weixin_42350212/article/details/84973320">https://blog.csdn.net/weixin_42350212/article/details/84973320</a></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>apt-get install iputils-ping
+<div class="section" id="id2">
+<h2>docker 同时删除停止的容器<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker rm \$(docker container ls -f &quot;status=exited&quot; -q)
+</pre></div>
+</div>
+<p>Docker 容器内安装 ifconfig netstat ping vim 等测试工具的方法</p>
+<p>https://blog.csdn.net/weixin_42350212/article/details/84973320</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">iputils</span><span class="o">-</span><span class="n">ping</span>
 
-apt-get install vim
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">vim</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id8">
-<h3>查看容器详情<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker inspect container_id
+<p>查看容器详情</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">inspect</span> <span class="n">container_id</span>
 </pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="dockerfile">
 <h2>Dockerfile 编写样例<a class="headerlink" href="#dockerfile" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://github.com/ekoz/docker-kbase/blob/master/Dockerfile">https://github.com/ekoz/docker-kbase/blob/master/Dockerfile</a></p>
+<p>https://github.com/ekoz/docker-kbase/blob/master/Dockerfile</p>
 </div>
 <div class="section" id="docker-save-docker-export">
 <h2>Docker save 与 Docker export 的区别<a class="headerlink" href="#docker-save-docker-export" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://blog.csdn.net/liukuan73/article/details/78089138">https://blog.csdn.net/liukuan73/article/details/78089138</a></p>
+<p>https://blog.csdn.net/liukuan73/article/details/78089138</p>
 </div>
-<div class="section" id="id9">
-<h2>Docker: 限制容器可用的内存<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.cnblogs.com/sparkdev/p/8032330.html">https://www.cnblogs.com/sparkdev/p/8032330.html</a></p>
+<div class="section" id="id3">
+<h2>Docker: 限制容器可用的内存<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>https://www.cnblogs.com/sparkdev/p/8032330.html</p>
 </div>
 <div class="section" id="demo">
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># mysql</span>
-docker run -d -p <span class="m">3306</span>:3306 --restart always --privileged<span class="o">=</span><span class="nb">true</span> --name mysql3306 -e <span class="nv">MYSQL_USER</span><span class="o">=</span><span class="s2">&quot;u_teach&quot;</span> -e <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span><span class="s2">&quot;u_teach&quot;</span> -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="s2">&quot;rOOt&quot;</span> -v /home/ekozhan/mysql/data:/var/lib/mysql -v /home/ekozhan/mysql/logs:/var/log/mysql 1e4405fe1ea9
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># mysql</span>
+
+<span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">p</span> <span class="mi">3306</span><span class="p">:</span><span class="mi">3306</span> <span class="o">--</span><span class="n">restart</span> <span class="n">always</span> <span class="o">--</span><span class="n">privileged</span><span class="o">=</span><span class="n">true</span> <span class="o">--</span><span class="n">name</span> <span class="n">mysql3306</span> <span class="o">-</span><span class="n">e</span> <span class="n">MYSQL_USER</span><span class="o">=</span><span class="s2">&quot;u_teach&quot;</span> <span class="o">-</span><span class="n">e</span> <span class="n">MYSQL_PASSWORD</span><span class="o">=</span><span class="s2">&quot;u_teach&quot;</span> <span class="o">-</span><span class="n">e</span> <span class="n">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="s2">&quot;rOOt&quot;</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ekozhan</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ekozhan</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="n">logs</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">mysql</span> <span class="mf">1e4405</span><span class="n">fe1ea9</span>
 
 <span class="c1"># mongodb</span>
-docker run --name mongo_container -p <span class="m">27017</span>:27017 -e <span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;Asia/Shanghai&quot;</span> --restart always --privileged<span class="o">=</span><span class="nb">true</span> -v /opt/docker/mongodb/data/db:/data/db -v /opt/docker/mongodb/data/configdb:/data/configdb -v /opt/docker/mongodb/data/logs:/data/logs -e <span class="nv">MONGO_INITDB_ROOT_USERNAME</span><span class="o">=</span>root -e <span class="nv">MONGO_INITDB_ROOT_PASSWORD</span><span class="o">=</span>rOOt -d 57c2f7e05108  --config /opt/docker/mongodb/data/mongod.conf
+
+<span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">name</span> <span class="n">mongo_container</span> <span class="o">-</span><span class="n">p</span> <span class="mi">27017</span><span class="p">:</span><span class="mi">27017</span> <span class="o">-</span><span class="n">e</span> <span class="n">TZ</span><span class="o">=</span><span class="s2">&quot;Asia/Shanghai&quot;</span> <span class="o">--</span><span class="n">restart</span> <span class="n">always</span> <span class="o">--</span><span class="n">privileged</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">docker</span><span class="o">/</span><span class="n">mongodb</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">db</span><span class="p">:</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">db</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">docker</span><span class="o">/</span><span class="n">mongodb</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">configdb</span><span class="p">:</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">configdb</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">docker</span><span class="o">/</span><span class="n">mongodb</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">logs</span><span class="p">:</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">logs</span> <span class="o">-</span><span class="n">e</span> <span class="n">MONGO_INITDB_ROOT_USERNAME</span><span class="o">=</span><span class="n">root</span> <span class="o">-</span><span class="n">e</span> <span class="n">MONGO_INITDB_ROOT_PASSWORD</span><span class="o">=</span><span class="n">rOOt</span> <span class="o">-</span><span class="n">d</span> <span class="mi">57</span><span class="n">c2f7e05108</span> <span class="o">--</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">docker</span><span class="o">/</span><span class="n">mongodb</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">mongod</span><span class="o">.</span><span class="n">conf</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id10">
-<h2>docker-compose<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>docker-compose<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p><strong>注意</strong></p>
 <p>项目中使用最多的就是 docker-compose</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker-compose down
-docker-compose build
-docker-compose up -d
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">down</span>
+<span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">build</span>
+<span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id11">
-<h2>相关资料<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://yeasy.gitbooks.io/docker_practice/">https://yeasy.gitbooks.io/docker_practice/</a></p>
+<div class="section" id="id5">
+<h2>相关资料<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>https://yeasy.gitbooks.io/docker_practice/</p>
 </div>
 </div>
 
@@ -198,44 +173,24 @@ docker-compose up -d
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Docker</a><ul>
-<li><a class="reference internal" href="#centos7-2docker">centos7.2安装docker</a><ul>
-<li><a class="reference internal" href="#dockerselinux">在docker里禁用selinux</a></li>
-<li><a class="reference internal" href="#centos7docker">centos7安装docker并设置开机启动</a></li>
-<li><a class="reference internal" href="#id1">docker启动，重启，关闭命令</a></li>
+<li><a class="reference internal" href="#centos7-2-docker">centos7.2 安装 docker</a></li>
 <li><a class="reference internal" href="#docker-compose">docker-compose 安装</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id2">Docker 镜像与容器</a><ul>
-<li><a class="reference internal" href="#id3">拉取镜像</a></li>
-<li><a class="reference internal" href="#docker-none">Docker 删除 &lt;none&gt; 镜像</a></li>
-<li><a class="reference internal" href="#id4">Docker 运行容器</a></li>
-<li><a class="reference internal" href="#id5">Docker 进入容器</a></li>
-<li><a class="reference internal" href="#id6">Docker 退出容器</a></li>
-<li><a class="reference internal" href="#id7">Docker 删除容器</a></li>
-<li><a class="reference internal" href="#docker-ifconfig-netstat-ping-vim">Docker 容器内安装 ifconfig netstat ping vim 等测试工具的方法</a></li>
-<li><a class="reference internal" href="#id8">查看容器详情</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#id1">Docker 镜像与容器</a></li>
+<li><a class="reference internal" href="#id2">docker 同时删除停止的容器</a></li>
 <li><a class="reference internal" href="#dockerfile">Dockerfile 编写样例</a></li>
 <li><a class="reference internal" href="#docker-save-docker-export">Docker save 与 Docker export 的区别</a></li>
-<li><a class="reference internal" href="#id9">Docker: 限制容器可用的内存</a></li>
+<li><a class="reference internal" href="#id3">Docker: 限制容器可用的内存</a></li>
 <li><a class="reference internal" href="#demo">Demo</a></li>
-<li><a class="reference internal" href="#id10">docker-compose</a></li>
-<li><a class="reference internal" href="#id11">相关资料</a></li>
+<li><a class="reference internal" href="#id4">docker-compose</a></li>
+<li><a class="reference internal" href="#id5">相关资料</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="linux.html"
-                        title="previous chapter">Linux（以CentOS7.2为主）</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="license.html"
-                        title="next chapter">License</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/docker.rst.txt"
+      <li><a href="_sources/docker.md.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -259,20 +214,13 @@ docker-compose up -d
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="license.html" title="License"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="linux.html" title="Linux（以CentOS7.2为主）"
-             >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">工作中的技能经验总结 1.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="linux.html" >Linux（以CentOS7.2为主）</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Docker</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, powered by ekoz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

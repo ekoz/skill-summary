@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git &#8212; 工作中的技能经验总结 1.0 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,7 +17,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Linux（以CentOS7.2为主）" href="linux.html" />
+    <link rel="next" title="License" href="license.html" />
     <link rel="prev" title="作者" href="authors.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -27,7 +27,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="linux.html" title="Linux（以CentOS7.2为主）"
+          <a href="license.html" title="License"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="authors.html" title="作者"
@@ -45,99 +45,104 @@
   <div class="section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="svn-git">
-<h2>从 <cite>svn</cite> 迁移至 <cite>git</cite><a class="headerlink" href="#svn-git" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
+<h2>从 <code class="docutils literal notranslate"><span class="pre">svn</span></code> 迁移至 <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#svn-git" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
 <li><p>Malformed XML: no element found</p></li>
 </ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ git svn clone http://172.16.1.244/svn/xmas/src/kbase/kbase-workflow/trunk1.1 -r <span class="m">20354</span>:HEAD --no-metadata -trunk<span class="o">=</span>trunk
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">svn</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.16</span><span class="o">.</span><span class="mf">1.244</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">xmas</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">kbase</span><span class="o">/</span><span class="n">kbase</span><span class="o">-</span><span class="n">workflow</span><span class="o">/</span><span class="n">trunk1</span><span class="o">.</span><span class="mi">1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">20354</span><span class="p">:</span><span class="n">HEAD</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">metadata</span> <span class="o">-</span><span class="n">trunk</span><span class="o">=</span><span class="n">trunk</span>
 </pre></div>
 </div>
 <p>报错信息：</p>
-<p><cite>Error from SVN, (175009): Malformed network data: The XML response contains invalid XML: Malformed XML: no element found</cite></p>
-<ol class="arabic simple" start="2">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="kn">from</span> <span class="nn">SVN</span><span class="p">,</span> <span class="p">(</span><span class="mi">175009</span><span class="p">):</span> <span class="n">Malformed</span> <span class="n">network</span> <span class="n">data</span><span class="p">:</span> <span class="n">The</span> <span class="n">XML</span> <span class="n">response</span> <span class="n">contains</span> <span class="n">invalid</span> <span class="n">XML</span><span class="p">:</span> <span class="n">Malformed</span> <span class="n">XML</span><span class="p">:</span> <span class="n">no</span> <span class="n">element</span> <span class="n">found</span>
+</pre></div>
+</div>
+<ol class="simple">
 <li><p>Dumping stack trace to perl.exe.stackdump</p></li>
 </ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git svn clone http://172.16.1.244/svn/xmas/src/kbase/kbase-workflow/trunk1.1 -r <span class="m">20354</span>:HEAD --no-metadata
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">svn</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.16</span><span class="o">.</span><span class="mf">1.244</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">xmas</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">kbase</span><span class="o">/</span><span class="n">kbase</span><span class="o">-</span><span class="n">workflow</span><span class="o">/</span><span class="n">trunk1</span><span class="o">.</span><span class="mi">1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">20354</span><span class="p">:</span><span class="n">HEAD</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">metadata</span>
 </pre></div>
 </div>
 <p>报错信息：</p>
-<p><cite>[main] perl 11008 cygwin_exception::open_stackdumpfile: Dumping stack trace to perl.exe.stackdump</cite></p>
-<p><strong>参考</strong>
-<a class="reference external" href="https://www.jianshu.com/p/7c5caf82fc72">https://www.jianshu.com/p/7c5caf82fc72</a></p>
-<ol class="arabic simple" start="3">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">perl</span> <span class="mi">11008</span> <span class="n">cygwin_exception</span><span class="p">::</span><span class="n">open_stackdumpfile</span><span class="p">:</span> <span class="n">Dumping</span> <span class="n">stack</span> <span class="n">trace</span> <span class="n">to</span> <span class="n">perl</span><span class="o">.</span><span class="n">exe</span><span class="o">.</span><span class="n">stackdump</span>
+</pre></div>
+</div>
+<p><strong>参考</strong></p>
+<p>https://www.jianshu.com/p/7c5caf82fc72</p>
+<ol class="simple">
 <li><p>–log-window-size=5000000</p></li>
 </ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git svn clone http://172.16.1.244/svn/xmas/src/kbase/kbase-workflow/trunk1.1 -r <span class="m">20354</span>:HEAD --no-metadata --log-window-size<span class="o">=</span><span class="m">5000000</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">svn</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.16</span><span class="o">.</span><span class="mf">1.244</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">xmas</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">kbase</span><span class="o">/</span><span class="n">kbase</span><span class="o">-</span><span class="n">workflow</span><span class="o">/</span><span class="n">trunk1</span><span class="o">.</span><span class="mi">1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">20354</span><span class="p">:</span><span class="n">HEAD</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">metadata</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">window</span><span class="o">-</span><span class="n">size</span><span class="o">=</span><span class="mi">5000000</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="git-clone">
 <h2>git clone 用法<a class="headerlink" href="#git-clone" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone -b branch_4x https://github.com/apache/lucene-solr.git ./lucene-solr-4.x
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">branch_4x</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">lucene</span><span class="o">-</span><span class="n">solr</span><span class="o">.</span><span class="n">git</span> <span class="o">./</span><span class="n">lucene</span><span class="o">-</span><span class="n">solr</span><span class="o">-</span><span class="mf">4.</span><span class="n">x</span>
 </pre></div>
 </div>
 <p>或者</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone -b i18n https://github.com/PanJiaChen/vue-element-admin.git ./hs-cloud-app
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">i18n</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">PanJiaChen</span><span class="o">/</span><span class="n">vue</span><span class="o">-</span><span class="n">element</span><span class="o">-</span><span class="n">admin</span><span class="o">.</span><span class="n">git</span> <span class="o">./</span><span class="n">hs</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">app</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="git-archive">
 <h2>git archive 用法<a class="headerlink" href="#git-archive" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li><p>获取 fromId 到 endId 版本间修改过的文件，不包含fromId</p></li>
+<ol class="simple">
+<li><p>获取 fromId 到 endId 版本间修改过的文件，不包含 fromId</p></li>
 </ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git archive -o hot-fix-20151001.zip HEAD <span class="k">$(</span>git diff 05104e3...a0eb9bc --name-only<span class="k">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git archive -o hot-fix-20151001.zip HEAD \$(git diff 05104e3...a0eb9bc --name-only)
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>包含fromId</p></li>
+<ol class="simple">
+<li><p>包含 fromId</p></li>
 </ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git archive -o hot-fix-201707181818.zip HEAD <span class="k">$(</span>git diff ^c2b0b19...bfbd8fe --name-only<span class="k">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git archive -o hot-fix-201707181818.zip HEAD \$(git diff ^c2b0b19...bfbd8fe --name-only)
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
+<ol class="simple">
 <li><p>导出指定的 commit</p></li>
 </ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git archive -o hot-fix.zip 08fc322
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">archive</span> <span class="o">-</span><span class="n">o</span> <span class="n">hot</span><span class="o">-</span><span class="n">fix</span><span class="o">.</span><span class="n">zip</span> <span class="mi">08</span><span class="n">fc322</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="git-cherry-pick">
 <h2>git cherry-pick 用法<a class="headerlink" href="#git-cherry-pick" title="Permalink to this headline">¶</a></h2>
-<p>把已经提交的commit, 从一个分支迁移到另一个分支</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git cherry-pick c2b0b19
+<blockquote>
+<div><p>把已经提交的 commit, 从一个分支迁移到另一个分支</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cherry</span><span class="o">-</span><span class="n">pick</span> <span class="n">c2b0b19</span>
 </pre></div>
 </div>
 <p>或</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git cherry-pick 1a19304^..9874cd6
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cherry</span><span class="o">-</span><span class="n">pick</span> <span class="mi">1</span><span class="n">a19304</span><span class="o">^..</span><span class="mi">9874</span><span class="n">cd6</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="git-p4merge">
 <h2>git p4merge 安装文档<a class="headerlink" href="#git-p4merge" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.jianshu.com/p/bc059d2846c1">https://www.jianshu.com/p/bc059d2846c1</a></p>
-<p><a class="reference external" href="https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge">https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge</a></p>
+<p>https://www.jianshu.com/p/bc059d2846c1</p>
+<p>https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge</p>
+<p>sourcetree 中的配置方法</p>
 </div>
 <div class="section" id="git-rebase">
 <h2>git rebase 用法<a class="headerlink" href="#git-rebase" title="Permalink to this headline">¶</a></h2>
-<p><cite>git rebase -i HEAD~N</cite></p>
-<ol class="arabic simple">
-<li><p>i键入</p></li>
-</ol>
 <blockquote>
-<div><p>pick XXX xxx</p>
-<p>需要改成s XXX xxx</p>
-<p>不需要改成d XXX xxx</p>
-<p>wq</p>
+<div><p>git rebase -i HEAD~N</p>
 </div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p>i键入</p></li>
+<ol class="simple">
+<li><p>i 键入</p></li>
 </ol>
-<blockquote>
-<div><p>修改Commit</p>
+<p>pick XXX xxx</p>
+<p>需要改成 s XXX xxx</p>
+<p>不需要改成 d XXX xxx</p>
 <p>wq</p>
-</div></blockquote>
-<ol class="arabic simple" start="3">
+<ol class="simple">
+<li><p>i 键入</p></li>
+</ol>
+<p>修改 Commit</p>
+<p>wq</p>
+<ol class="simple">
 <li><p>推送</p></li>
 </ol>
 </div>
@@ -145,10 +150,10 @@
 <h2>git commit 规范<a class="headerlink" href="#git-commit" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>feat: 新功能（feature）</p></li>
-<li><p>fix: 修补bug</p></li>
+<li><p>fix: 修补 bug</p></li>
 <li><p>docs: 文档（documentation）</p></li>
-<li><p>style:  格式（不影响代码运行的变动）</p></li>
-<li><p>refactor: 重构（即不是新增功能，也不是修改bug的代码变动）</p></li>
+<li><p>style: 格式（不影响代码运行的变动）</p></li>
+<li><p>refactor: 重构（即不是新增功能，也不是修改 bug 的代码变动）</p></li>
 <li><p>test: 增加测试</p></li>
 <li><p>chore: 构建过程或辅助工具的变动</p></li>
 </ul>
@@ -167,7 +172,7 @@
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Git</a><ul>
-<li><a class="reference internal" href="#svn-git">从 <cite>svn</cite> 迁移至 <cite>git</cite></a></li>
+<li><a class="reference internal" href="#svn-git">从 <code class="docutils literal notranslate"><span class="pre">svn</span></code> 迁移至 <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
 <li><a class="reference internal" href="#git-clone">git clone 用法</a></li>
 <li><a class="reference internal" href="#git-archive">git archive 用法</a></li>
 <li><a class="reference internal" href="#git-cherry-pick">git cherry-pick 用法</a></li>
@@ -182,12 +187,12 @@
   <p class="topless"><a href="authors.html"
                         title="previous chapter">作者</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="linux.html"
-                        title="next chapter">Linux（以CentOS7.2为主）</a></p>
+  <p class="topless"><a href="license.html"
+                        title="next chapter">License</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/git.rst.txt"
+      <li><a href="_sources/git.md.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -212,7 +217,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="linux.html" title="Linux（以CentOS7.2为主）"
+          <a href="license.html" title="License"
              >next</a> |</li>
         <li class="right" >
           <a href="authors.html" title="作者"
@@ -223,7 +228,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, powered by ekoz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>
