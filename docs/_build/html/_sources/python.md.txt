@@ -1,0 +1,36 @@
+# Python
+
+## Anaconda
+
+[官网](https://www.anaconda.com/products/individual)
+
+```
+# 查看虚拟环境
+conda env list
+
+# 创建环境
+conda create -n your_env_name python=X.X
+conda create -n python36 python=3.6.8
+
+# 安装必要的包
+conda create -n python36 numpy matplotlib python=3.6.8
+# 或者
+conda install -n your_env_name [package]
+
+
+# 切换到虚拟环境
+conda activate python36
+
+# 关闭虚拟环境
+conda deactivate python36
+
+# 移除虚拟环境
+conda remove -n your_env_name(虚拟环境名称) --all
+
+# 移除虚拟环境中的某个包
+conda remove --name $your_env_name  $package_name
+
+# pip 查看 [package] 当前版本
+pip show numpy
+pip install numpy==1.16.0
+```

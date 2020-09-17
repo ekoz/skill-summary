@@ -25,3 +25,11 @@ source_parsers = {
 
 source_suffix = ['.rst', '.md']
 ```
+
+## requirements
+
+```
+pip install sphinx
+pip install recommonmark
+pip install sphinx-rtd-theme
+```

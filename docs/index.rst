@@ -13,5 +13,6 @@
    git
    linux
    docker
+   python
    license
 
