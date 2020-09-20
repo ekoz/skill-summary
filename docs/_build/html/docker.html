@@ -101,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#demo">Demo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">docker-compose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id5">相关资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#centos8-docker">CentOS8 安装 docker 遇到的报错</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
@@ -177,27 +178,32 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">yum</span> <span class="n">install</span> <span class="n">docker</span>
 </pre></div>
 </div>
-<p>https://www.jianshu.com/p/232bc2c1e95d</p>
+<p><a class="reference external" href="https://www.jianshu.com/p/232bc2c1e95d">https://www.jianshu.com/p/232bc2c1e95d</a></p>
 <p>在 docker 里禁用 selinux</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">docker</span>
 <span class="o">--</span><span class="n">selinux</span><span class="o">-</span><span class="n">enabled</span><span class="o">=</span><span class="n">false</span>
 </pre></div>
 </div>
-<p>https://www.cnblogs.com/hongdada/p/8886893.html</p>
+<p><a class="reference external" href="https://www.cnblogs.com/hongdada/p/8886893.html">https://www.cnblogs.com/hongdada/p/8886893.html</a></p>
 <p>centos7 安装 docker 并设置开机启动</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">enable</span> <span class="n">docker</span>
 </pre></div>
 </div>
-<p>https://www.cnblogs.com/rwxwsblog/p/5436445.html</p>
+<p><a class="reference external" href="https://www.cnblogs.com/rwxwsblog/p/5436445.html">https://www.cnblogs.com/rwxwsblog/p/5436445.html</a></p>
 <p>docker 启动，重启，关闭命令</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">docker</span> <span class="n">start</span>
 </pre></div>
 </div>
-<p>https://blog.csdn.net/EasternUnbeaten/article/details/80463837</p>
+<p><a class="reference external" href="https://blog.csdn.net/EasternUnbeaten/article/details/80463837">https://blog.csdn.net/EasternUnbeaten/article/details/80463837</a></p>
 </div>
 <div class="section" id="docker-compose">
 <h2>docker-compose 安装<a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h2>
-<p>https://github.com/docker/compose/releases</p>
+<p><a class="reference external" href="https://github.com/docker/compose/releases">https://github.com/docker/compose/releases</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+</pre></div>
+</div>
 </div>
 <div class="section" id="id1">
 <h2>Docker 镜像与容器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -247,7 +253,7 @@ docker run -p 80:80 --name ng_container -v $PWD/www:/www -v $PWD/conf/nginx.conf
 </pre></div>
 </div>
 <p>Docker 容器内安装 ifconfig netstat ping vim 等测试工具的方法</p>
-<p>https://blog.csdn.net/weixin_42350212/article/details/84973320</p>
+<p><a class="reference external" href="https://blog.csdn.net/weixin_42350212/article/details/84973320">https://blog.csdn.net/weixin_42350212/article/details/84973320</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">iputils</span><span class="o">-</span><span class="n">ping</span>
 
 <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">vim</span>
@@ -260,7 +266,7 @@ docker run -p 80:80 --name ng_container -v $PWD/www:/www -v $PWD/conf/nginx.conf
 </div>
 <div class="section" id="dockerfile">
 <h2>Dockerfile 编写样例<a class="headerlink" href="#dockerfile" title="Permalink to this headline">¶</a></h2>
-<p>https://github.com/ekoz/docker-kbase/blob/master/Dockerfile</p>
+<p><a class="reference external" href="https://github.com/ekoz/docker-kbase/blob/master/Dockerfile">https://github.com/ekoz/docker-kbase/blob/master/Dockerfile</a></p>
 </div>
 <div class="section" id="docker-save-docker-export">
 <h2>Docker save 与 Docker export 的区别<a class="headerlink" href="#docker-save-docker-export" title="Permalink to this headline">¶</a></h2>
@@ -295,7 +301,24 @@ docker run -p 80:80 --name ng_container -v $PWD/www:/www -v $PWD/conf/nginx.conf
 </div>
 <div class="section" id="id5">
 <h2>相关资料<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>https://yeasy.gitbooks.io/docker_practice/</p>
+<p><a class="reference external" href="https://yeasy.gitbooks.io/docker_practice/">https://yeasy.gitbooks.io/docker_practice/</a></p>
+<p><a class="reference external" href="https://www.runoob.com/docker/docker-compose.html">https://www.runoob.com/docker/docker-compose.html</a></p>
+</div>
+<div class="section" id="centos8-docker">
+<h2>CentOS8 安装 docker 遇到的报错<a class="headerlink" href="#centos8-docker" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">update</span>
+
+<span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">yum</span><span class="o">-</span><span class="n">utils</span>
+
+<span class="n">yum</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">manager</span>  <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">repo</span>   <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">docker</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">centos</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">ce</span><span class="o">.</span><span class="n">repo</span>
+
+<span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">ce</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">centos</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="n">x86_64</span><span class="o">/</span><span class="n">edge</span><span class="o">/</span><span class="n">Packages</span><span class="o">/</span><span class="n">containerd</span><span class="o">.</span><span class="n">io</span><span class="o">-</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">6</span><span class="o">-</span><span class="mf">3.3</span><span class="o">.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span>
+
+<span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span> <span class="n">containerd</span><span class="o">.</span><span class="n">io</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.cnblogs.com/shook/p/13563017.html">https://www.cnblogs.com/shook/p/13563017.html</a></p>
+<p><a class="reference external" href="https://blog.csdn.net/u012587407/article/details/107287982/">https://blog.csdn.net/u012587407/article/details/107287982/</a></p>
 </div>
 </div>
 

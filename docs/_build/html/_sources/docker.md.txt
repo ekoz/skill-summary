@@ -6,7 +6,7 @@
   yum install docker
 ```
 
-https://www.jianshu.com/p/232bc2c1e95d
+[https://www.jianshu.com/p/232bc2c1e95d](https://www.jianshu.com/p/232bc2c1e95d)
 
 在 docker 里禁用 selinux
 
@@ -15,7 +15,7 @@ vim /etc/sysconfig/docker
 --selinux-enabled=false
 ```
 
-https://www.cnblogs.com/hongdada/p/8886893.html
+[https://www.cnblogs.com/hongdada/p/8886893.html](https://www.cnblogs.com/hongdada/p/8886893.html)
 
 centos7 安装 docker 并设置开机启动
 
@@ -23,7 +23,7 @@ centos7 安装 docker 并设置开机启动
 systemctl enable docker
 ```
 
-https://www.cnblogs.com/rwxwsblog/p/5436445.html
+[https://www.cnblogs.com/rwxwsblog/p/5436445.html](https://www.cnblogs.com/rwxwsblog/p/5436445.html)
 
 docker 启动，重启，关闭命令
 
@@ -31,11 +31,17 @@ docker 启动，重启，关闭命令
 sudo service docker start
 ```
 
-https://blog.csdn.net/EasternUnbeaten/article/details/80463837
+[https://blog.csdn.net/EasternUnbeaten/article/details/80463837](https://blog.csdn.net/EasternUnbeaten/article/details/80463837)
 
 ## docker-compose 安装
 
-https://github.com/docker/compose/releases
+[https://github.com/docker/compose/releases](https://github.com/docker/compose/releases)
+
+```
+curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+```
 
 ## Docker 镜像与容器
 
@@ -93,7 +99,7 @@ docker rm \$(docker container ls -f "status=exited" -q)
 
 Docker 容器内安装 ifconfig netstat ping vim 等测试工具的方法
 
-https://blog.csdn.net/weixin_42350212/article/details/84973320
+[https://blog.csdn.net/weixin_42350212/article/details/84973320](https://blog.csdn.net/weixin_42350212/article/details/84973320)
 
 ```
 apt-get install iputils-ping
@@ -109,7 +115,7 @@ docker inspect container_id
 
 ## Dockerfile 编写样例
 
-https://github.com/ekoz/docker-kbase/blob/master/Dockerfile
+[https://github.com/ekoz/docker-kbase/blob/master/Dockerfile](https://github.com/ekoz/docker-kbase/blob/master/Dockerfile)
 
 ## Docker save 与 Docker export 的区别
 
@@ -146,4 +152,24 @@ docker-compose up -d
 
 ## 相关资料
 
-https://yeasy.gitbooks.io/docker_practice/
+[https://yeasy.gitbooks.io/docker_practice/](https://yeasy.gitbooks.io/docker_practice/)
+
+[https://www.runoob.com/docker/docker-compose.html](https://www.runoob.com/docker/docker-compose.html)
+
+## CentOS8 安装 docker 遇到的报错
+
+```
+yum update
+
+yum install -y yum-utils
+
+yum-config-manager  --add-repo   https://download.docker.com/linux/centos/docker-ce.repo
+
+yum install -y https://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+
+yum install -y docker-ce containerd.io
+```
+
+[https://www.cnblogs.com/shook/p/13563017.html](https://www.cnblogs.com/shook/p/13563017.html)
+
+[https://blog.csdn.net/u012587407/article/details/107287982/](https://blog.csdn.net/u012587407/article/details/107287982/)
