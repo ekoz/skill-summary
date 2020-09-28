@@ -202,15 +202,21 @@
 </div>
 <div class="section" id="yum">
 <h2>国内 yum 源<a class="headerlink" href="#yum" title="Permalink to this headline">¶</a></h2>
-<p>https://www.runoob.com/linux/linux-yum.html</p>
-<p>http://mirrors.163.com/.help/centos.html</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">CentOS</span><span class="o">-</span><span class="n">Base</span><span class="o">.</span><span class="n">repo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">CentOS</span><span class="o">-</span><span class="n">Base</span><span class="o">.</span><span class="n">repo</span><span class="o">.</span><span class="n">backup</span>
+<span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="mf">163.</span><span class="n">com</span><span class="o">/.</span><span class="n">help</span><span class="o">/</span><span class="n">CentOS7</span><span class="o">-</span><span class="n">Base</span><span class="o">-</span><span class="mf">163.</span><span class="n">repo</span>
+<span class="n">mv</span> <span class="n">CentOS7</span><span class="o">-</span><span class="n">Base</span><span class="o">-</span><span class="mf">163.</span><span class="n">repo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span>
+<span class="n">yum</span> <span class="n">clean</span> <span class="nb">all</span>
+<span class="n">yum</span> <span class="n">makecache</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.runoob.com/linux/linux-yum.html">https://www.runoob.com/linux/linux-yum.html</a></p>
+<p><a class="reference external" href="http://mirrors.163.com/.help/centos.html">http://mirrors.163.com/.help/centos.html</a></p>
 </div>
 <div class="section" id="id2">
 <h2>防火墙<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>centOS7 永久关闭防火墙(防火墙的基本使用)</p></li>
 </ol>
-<p>https://blog.csdn.net/ViJayThresh/article/details/81284007</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看状态</span>
 <span class="n">systemctl</span> <span class="n">status</span> <span class="n">firewalld</span><span class="o">.</span><span class="n">service</span>
 
@@ -227,28 +233,32 @@
 <span class="n">systemctl</span> <span class="n">disable</span> <span class="n">firewalld</span><span class="o">.</span><span class="n">service</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://blog.csdn.net/ViJayThresh/article/details/81284007">https://blog.csdn.net/ViJayThresh/article/details/81284007</a></p>
 <ol class="simple">
 <li><p>CentOS7 查看和关闭防火墙</p></li>
 </ol>
-<p>https://blog.csdn.net/ytangdigl/article/details/79796961</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">state</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://blog.csdn.net/ytangdigl/article/details/79796961">https://blog.csdn.net/ytangdigl/article/details/79796961</a></p>
 <ol class="simple">
 <li><p>CentOS 防火墙添加例外端口</p></li>
 </ol>
-<p>https://blog.csdn.net/jiankunking/article/details/78794383</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看状态</span>
 
 <span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">state</span>
 
 <span class="c1"># 添加 8080 例外端口</span>
+<span class="c1"># –zone 作用域</span>
+<span class="c1"># –add-port=8080/tcp 添加端口，格式为：端口/通讯协议</span>
+<span class="c1"># –permanent 永久生效，没有此参数重启后失效</span>
 <span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">permanent</span> <span class="o">--</span><span class="n">zone</span><span class="o">=</span><span class="n">public</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="o">/</span><span class="n">tcp</span>
 
 <span class="c1"># 重新加载</span>
 <span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">reload</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://blog.csdn.net/jiankunking/article/details/78794383">https://blog.csdn.net/jiankunking/article/details/78794383</a></p>
 </div>
 <div class="section" id="jdk">
 <h2>jdk 安装<a class="headerlink" href="#jdk" title="Permalink to this headline">¶</a></h2>
@@ -479,7 +489,7 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 <span class="n">netstat</span> <span class="o">-</span><span class="n">nat</span><span class="o">|</span><span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="mi">8080</span><span class="o">|</span><span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
 </pre></div>
 </div>
-<p>https://blog.csdn.net/duan19056/article/details/51210110</p>
+<p><a class="reference external" href="https://blog.csdn.net/duan19056/article/details/51210110">https://blog.csdn.net/duan19056/article/details/51210110</a></p>
 </div>
 <div class="section" id="crontab">
 <h2>crontab 定时任务<a class="headerlink" href="#crontab" title="Permalink to this headline">¶</a></h2>
@@ -542,7 +552,7 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </pre></div>
 </div>
 <p>python2.7 与 python3.6 兼容</p>
-<p>https://linuxize.com/post/how-to-install-python-3-on-centos-7/</p>
+<p><a class="reference external" href="https://linuxize.com/post/how-to-install-python-3-on-centos-7/">https://linuxize.com/post/how-to-install-python-3-on-centos-7/</a></p>
 <p>推荐使用 conda</p>
 </div>
 <div class="section" id="docker">

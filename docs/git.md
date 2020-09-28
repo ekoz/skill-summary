@@ -84,9 +84,9 @@ git cherry-pick 1a19304^..9874cd6
 
 ## git p4merge 安装文档
 
-https://www.jianshu.com/p/bc059d2846c1
+[https://www.jianshu.com/p/bc059d2846c1](https://www.jianshu.com/p/bc059d2846c1)
 
-https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge
+[https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge](https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge)
 
 sourcetree 中的配置方法
 

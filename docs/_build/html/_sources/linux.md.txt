@@ -13,15 +13,21 @@
 
 ## 国内 yum 源
 
-https://www.runoob.com/linux/linux-yum.html
+```
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+mv CentOS7-Base-163.repo /etc/yum.repos.d/
+yum clean all
+yum makecache
+```
 
-http://mirrors.163.com/.help/centos.html
+[https://www.runoob.com/linux/linux-yum.html](https://www.runoob.com/linux/linux-yum.html)
+
+[http://mirrors.163.com/.help/centos.html](http://mirrors.163.com/.help/centos.html)
 
 ## 防火墙
 
 1. centOS7 永久关闭防火墙(防火墙的基本使用)
-
-https://blog.csdn.net/ViJayThresh/article/details/81284007
 
 ```
 # 查看状态
@@ -40,17 +46,17 @@ systemctl enable firewalld.service
 systemctl disable firewalld.service
 ```
 
-2. CentOS7 查看和关闭防火墙
+[https://blog.csdn.net/ViJayThresh/article/details/81284007](https://blog.csdn.net/ViJayThresh/article/details/81284007)
 
-https://blog.csdn.net/ytangdigl/article/details/79796961
+2. CentOS7 查看和关闭防火墙
 
 ```
 firewall-cmd --state
 ```
 
-3. CentOS 防火墙添加例外端口
+[https://blog.csdn.net/ytangdigl/article/details/79796961](https://blog.csdn.net/ytangdigl/article/details/79796961)
 
-https://blog.csdn.net/jiankunking/article/details/78794383
+3. CentOS 防火墙添加例外端口
 
 ```
 # 查看状态
@@ -58,11 +64,16 @@ https://blog.csdn.net/jiankunking/article/details/78794383
 firewall-cmd --state
 
 # 添加 8080 例外端口
+# –zone 作用域
+# –add-port=8080/tcp 添加端口，格式为：端口/通讯协议
+# –permanent 永久生效，没有此参数重启后失效
 firewall-cmd --permanent --zone=public --add-port=8080/tcp
 
 # 重新加载
 firewall-cmd --reload
 ```
+
+[https://blog.csdn.net/jiankunking/article/details/78794383](https://blog.csdn.net/jiankunking/article/details/78794383)
 
 ## jdk 安装
 
@@ -319,7 +330,7 @@ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 netstat -nat|grep -i 8080|wc -l
 ```
 
-https://blog.csdn.net/duan19056/article/details/51210110
+[https://blog.csdn.net/duan19056/article/details/51210110](https://blog.csdn.net/duan19056/article/details/51210110)
 
 ## crontab 定时任务
 
@@ -386,7 +397,7 @@ pip install --upgrade pip
 
 python2.7 与 python3.6 兼容
 
-https://linuxize.com/post/how-to-install-python-3-on-centos-7/
+[https://linuxize.com/post/how-to-install-python-3-on-centos-7/](https://linuxize.com/post/how-to-install-python-3-on-centos-7/)
 
 推荐使用 conda
 
