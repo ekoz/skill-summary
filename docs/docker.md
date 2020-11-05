@@ -121,6 +121,36 @@ docker inspect container_id
 
 [https://blog.csdn.net/liukuan73/article/details/78089138](https://blog.csdn.net/liukuan73/article/details/78089138)
 
+### 将容器打包成镜像并启动
+
+```
+[root@localhost mysql]# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
+cc72f2b081b9        mysql:8.0           "docker-entrypoint.s…"   3 weeks ago         Up 6 minutes        0.0.0.0:3306->3306/tcp, 33060/tcp   mysql-docker
+[root@localhost mysql]# pwd
+/opt/app/mysql
+[root@localhost mysql]# ls
+data  docker-compose.yml
+[root@localhost mysql]# docker export -o mysql-export.tar cc72f2b081b9
+[root@localhost mysql]# ls
+data  docker-compose.yml  mysql-export.tar
+[root@localhost mysql]# docker import mysql-export.tar ekozhan/mysql:0.1
+sha256:cde3f783415f0dc7a76d7df89765ced2e59db38dff3e2534d859b476f5497e15
+[root@localhost mysql]# docker images
+REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
+ekozhan/mysql            0.1                 cde3f783415f        5 seconds ago       538MB
+mysql                    8.0                 8e85dd5c3255        3 weeks ago         544MB
+wurstmeister/kafka       latest              40094a582680        2 months ago        435MB
+wurstmeister/zookeeper   latest              3f43f72cb283        21 months ago       510MB
+[root@localhost mysql]# docker run --name mysql3306 -e MYSQL_ROOT_PASSWORD=123456  -d -p 3308:3308 cde3f783415f docker-entrypoint.sh mysqld
+dd344b94113c301930b5b0a5184ed41b4679e7a5b4e45adb69f894df1a870417
+[root@localhost mysql]# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
+dd344b94113c        cde3f783415f        "docker-entrypoint.s…"   4 seconds ago       Up 3 seconds        0.0.0.0:3308->3308/tcp              mysql3306
+cc72f2b081b9        mysql:8.0           "docker-entrypoint.s…"   3 weeks ago         Up 15 minutes       0.0.0.0:3306->3306/tcp, 33060/tcp   mysql-docker
+
+```
+
 ## Docker: 限制容器可用的内存
 
 [https://www.cnblogs.com/sparkdev/p/8032330.html](https://www.cnblogs.com/sparkdev/p/8032330.html)
