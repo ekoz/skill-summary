@@ -96,11 +96,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#id1">Docker 镜像与容器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">docker 同时删除停止的容器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dockerfile">Dockerfile 编写样例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#docker-save-docker-export">Docker save 与 Docker export 的区别</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">Docker: 限制容器可用的内存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-save-docker-export">Docker save 与 Docker export 的区别</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">将容器打包成镜像并启动</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Docker: 限制容器可用的内存</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#demo">Demo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">docker-compose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">相关资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">docker-compose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">相关资料</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#centos8-docker">CentOS8 安装 docker 遇到的报错</a></li>
 </ul>
 </li>
@@ -271,9 +274,45 @@ docker run -p 80:80 --name ng_container -v $PWD/www:/www -v $PWD/conf/nginx.conf
 <div class="section" id="docker-save-docker-export">
 <h2>Docker save 与 Docker export 的区别<a class="headerlink" href="#docker-save-docker-export" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://blog.csdn.net/liukuan73/article/details/78089138">https://blog.csdn.net/liukuan73/article/details/78089138</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">save</span> \
+<span class="n">ekozhan</span><span class="o">/</span><span class="n">nginx</span><span class="p">:</span><span class="mf">1.0</span> \
+<span class="n">ekozhan</span><span class="o">/</span><span class="n">elasticsearch</span><span class="p">:</span><span class="mf">1.0</span> \
+<span class="n">ekozhan</span><span class="o">/</span><span class="n">kibana</span><span class="p">:</span><span class="mf">1.0</span> \
+<span class="o">|</span> <span class="n">gzip</span> <span class="o">&gt;</span> <span class="n">docker_images_20201202_1</span><span class="o">.</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
 </div>
 <div class="section" id="id3">
-<h2>Docker: 限制容器可用的内存<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h3>将容器打包成镜像并启动<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@localhost</span> <span class="n">mysql</span><span class="p">]</span><span class="c1"># docker ps</span>
+<span class="n">CONTAINER</span> <span class="n">ID</span>        <span class="n">IMAGE</span>               <span class="n">COMMAND</span>                  <span class="n">CREATED</span>             <span class="n">STATUS</span>              <span class="n">PORTS</span>                               <span class="n">NAMES</span>
+<span class="n">cc72f2b081b9</span>        <span class="n">mysql</span><span class="p">:</span><span class="mf">8.0</span>           <span class="s2">&quot;docker-entrypoint.s…&quot;</span>   <span class="mi">3</span> <span class="n">weeks</span> <span class="n">ago</span>         <span class="n">Up</span> <span class="mi">6</span> <span class="n">minutes</span>        <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">3306</span><span class="o">-&gt;</span><span class="mi">3306</span><span class="o">/</span><span class="n">tcp</span><span class="p">,</span> <span class="mi">33060</span><span class="o">/</span><span class="n">tcp</span>   <span class="n">mysql</span><span class="o">-</span><span class="n">docker</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@localhost</span> <span class="n">mysql</span><span class="p">]</span><span class="c1"># pwd</span>
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">mysql</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@localhost</span> <span class="n">mysql</span><span class="p">]</span><span class="c1"># ls</span>
+<span class="n">data</span>  <span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">.</span><span class="n">yml</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@localhost</span> <span class="n">mysql</span><span class="p">]</span><span class="c1"># docker export -o mysql-export.tar cc72f2b081b9</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@localhost</span> <span class="n">mysql</span><span class="p">]</span><span class="c1"># ls</span>
+<span class="n">data</span>  <span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">.</span><span class="n">yml</span>  <span class="n">mysql</span><span class="o">-</span><span class="n">export</span><span class="o">.</span><span class="n">tar</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@localhost</span> <span class="n">mysql</span><span class="p">]</span><span class="c1"># docker import mysql-export.tar ekozhan/mysql:0.1</span>
+<span class="n">sha256</span><span class="p">:</span><span class="n">cde3f783415f0dc7a76d7df89765ced2e59db38dff3e2534d859b476f5497e15</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@localhost</span> <span class="n">mysql</span><span class="p">]</span><span class="c1"># docker images</span>
+<span class="n">REPOSITORY</span>               <span class="n">TAG</span>                 <span class="n">IMAGE</span> <span class="n">ID</span>            <span class="n">CREATED</span>             <span class="n">SIZE</span>
+<span class="n">ekozhan</span><span class="o">/</span><span class="n">mysql</span>            <span class="mf">0.1</span>                 <span class="n">cde3f783415f</span>        <span class="mi">5</span> <span class="n">seconds</span> <span class="n">ago</span>       <span class="mi">538</span><span class="n">MB</span>
+<span class="n">mysql</span>                    <span class="mf">8.0</span>                 <span class="mf">8e85</span><span class="n">dd5c3255</span>        <span class="mi">3</span> <span class="n">weeks</span> <span class="n">ago</span>         <span class="mi">544</span><span class="n">MB</span>
+<span class="n">wurstmeister</span><span class="o">/</span><span class="n">kafka</span>       <span class="n">latest</span>              <span class="mi">40094</span><span class="n">a582680</span>        <span class="mi">2</span> <span class="n">months</span> <span class="n">ago</span>        <span class="mi">435</span><span class="n">MB</span>
+<span class="n">wurstmeister</span><span class="o">/</span><span class="n">zookeeper</span>   <span class="n">latest</span>              <span class="mi">3</span><span class="n">f43f72cb283</span>        <span class="mi">21</span> <span class="n">months</span> <span class="n">ago</span>       <span class="mi">510</span><span class="n">MB</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@localhost</span> <span class="n">mysql</span><span class="p">]</span><span class="c1"># docker run --name mysql3306 -e MYSQL_ROOT_PASSWORD=123456  -d -p 3308:3308 cde3f783415f docker-entrypoint.sh mysqld</span>
+<span class="n">dd344b94113c301930b5b0a5184ed41b4679e7a5b4e45adb69f894df1a870417</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@localhost</span> <span class="n">mysql</span><span class="p">]</span><span class="c1"># docker ps</span>
+<span class="n">CONTAINER</span> <span class="n">ID</span>        <span class="n">IMAGE</span>               <span class="n">COMMAND</span>                  <span class="n">CREATED</span>             <span class="n">STATUS</span>              <span class="n">PORTS</span>                               <span class="n">NAMES</span>
+<span class="n">dd344b94113c</span>        <span class="n">cde3f783415f</span>        <span class="s2">&quot;docker-entrypoint.s…&quot;</span>   <span class="mi">4</span> <span class="n">seconds</span> <span class="n">ago</span>       <span class="n">Up</span> <span class="mi">3</span> <span class="n">seconds</span>        <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">3308</span><span class="o">-&gt;</span><span class="mi">3308</span><span class="o">/</span><span class="n">tcp</span>              <span class="n">mysql3306</span>
+<span class="n">cc72f2b081b9</span>        <span class="n">mysql</span><span class="p">:</span><span class="mf">8.0</span>           <span class="s2">&quot;docker-entrypoint.s…&quot;</span>   <span class="mi">3</span> <span class="n">weeks</span> <span class="n">ago</span>         <span class="n">Up</span> <span class="mi">15</span> <span class="n">minutes</span>       <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">3306</span><span class="o">-&gt;</span><span class="mi">3306</span><span class="o">/</span><span class="n">tcp</span><span class="p">,</span> <span class="mi">33060</span><span class="o">/</span><span class="n">tcp</span>   <span class="n">mysql</span><span class="o">-</span><span class="n">docker</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Docker: 限制容器可用的内存<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.cnblogs.com/sparkdev/p/8032330.html">https://www.cnblogs.com/sparkdev/p/8032330.html</a></p>
 </div>
 <div class="section" id="demo">
@@ -288,8 +327,8 @@ docker run -p 80:80 --name ng_container -v $PWD/www:/www -v $PWD/conf/nginx.conf
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>docker-compose<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>docker-compose<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p><strong>注意</strong></p>
 <p>项目中使用最多的就是 docker-compose</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
@@ -299,8 +338,8 @@ docker run -p 80:80 --name ng_container -v $PWD/www:/www -v $PWD/conf/nginx.conf
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>相关资料<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>相关资料<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://yeasy.gitbooks.io/docker_practice/">https://yeasy.gitbooks.io/docker_practice/</a></p>
 <p><a class="reference external" href="https://www.runoob.com/docker/docker-compose.html">https://www.runoob.com/docker/docker-compose.html</a></p>
 </div>

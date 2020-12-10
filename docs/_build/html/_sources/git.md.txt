@@ -94,23 +94,35 @@ sourcetree 中的配置方法
 
 > git rebase -i HEAD~N
 
-1. i 键入
+N 是指要压缩的最近的 commit
 
-pick XXX xxx
+- 筛选需要合并的 commit
 
-需要改成 s XXX xxx
+命令输入后会切换到编辑框，vi 命令操作
 
-不需要改成 d XXX xxx
+第一行还是 pick 开头
 
-wq
+后面需要的 commit message 前缀改成 s，不需要的前缀改成 d，如下图所示
 
-2. i 键入
+![rebase-1](./assets/rebase-1.png)
 
-修改 Commit
+修改完毕后 wq 保存
 
-wq
+- 修改 commit message
 
-3. 推送
+此时会切换至 commit message 合并页面，依然是 vi 命令，将不需要的 commit message 用 # 注释即可，wq 保存
+
+![rebase-2](./assets/rebase-2.png)
+
+- 强制推送
+
+`git push –f`
+
+由于服务器上已经存在该分支，所以需要强制推送，注意，无法强制推送至受保护的分支
+
+![rebase-3](./assets/rebase-3.png)
+
+_注意：在开发过程中，建议 checkout 新分支进行开发，开发完毕后，merge rquest 给分支负责人进行合并，merge request 的时候勾选 squash 即可由 gitlab 帮我们进行分支合并_
 
 ## git commit 规范
 

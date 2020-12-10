@@ -121,6 +121,14 @@ docker inspect container_id
 
 [https://blog.csdn.net/liukuan73/article/details/78089138](https://blog.csdn.net/liukuan73/article/details/78089138)
 
+```
+docker save \
+ekozhan/nginx:1.0 \
+ekozhan/elasticsearch:1.0 \
+ekozhan/kibana:1.0 \
+| gzip > docker_images_20201202_1.0.tar.gz
+```
+
 ### 将容器打包成镜像并启动
 
 ```
