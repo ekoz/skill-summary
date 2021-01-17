@@ -47,6 +47,8 @@ pip install numpy==1.16.0
 
 windows 直接在 user 目录中创建一个 pip 目录，如：C:\Users\Administrator\pip，新建文件 pip.ini，内容如下
 
+Linux 上的文件路径如：~/.pip/pip.conf
+
 ```
 [global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple

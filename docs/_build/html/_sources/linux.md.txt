@@ -415,3 +415,10 @@ python2.7 与 python3.6 兼容
 uname -a
 cat /etc/redhat-release
 ```
+## alias
+添加命令并永久生效
+```
+alias ll='ls -a'
+vim /root/.bashrc
+source /root/.bashrc
+```
