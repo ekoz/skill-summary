@@ -8,7 +8,7 @@
 
 **注意：运行时需要修改 make.bat 或 Makefile 文件中的 `SPHINXBUILD` 路径，Linux下，直接在Makefile所在目录运行 `make html` 即可**
 
-![venv](./venv_activate.png)
+![venv](docs/assets/venv_activate.png)
 
 ## 采用 Markdown 语法
 

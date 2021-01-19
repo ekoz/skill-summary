@@ -310,6 +310,9 @@ ps -ef|grep soffice|grep -v grep|awk '{print \$2}'|xargs kill -9
 
 ```
 ln -s /mnt/disk0/xiaoi /xiaoi
+sudo ln -s /home/ekozhan/Programs/node-v14.15.4-linux-x64/bin/node /usr/local/bin/node
+sudo ln -s /home/ekozhan/Programs/node-v14.15.4-linux-x64/bin/npm /usr/local/bin/npm
+sudo ln -s /home/ekozhan/Programs/node-v14.15.4-linux-x64/bin/cnpm /usr/local/bin/cnpm
 ```
 
 ## 重启关机记录排查
