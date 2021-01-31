@@ -104,8 +104,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">Docker: 限制容器可用的内存</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#demo">Demo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">docker-compose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">相关资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Docker 使用国内镜像仓库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">docker-compose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">相关资料</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#centos8-docker">CentOS8 安装 docker 遇到的报错</a></li>
 </ul>
 </li>
@@ -332,7 +333,21 @@ docker run -p 80:80 --name ng_container -v $PWD/www:/www -v $PWD/conf/nginx.conf
 </div>
 </div>
 <div class="section" id="id5">
-<h2>docker-compose<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>Docker 使用国内镜像仓库<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">/etc/docker/daemon.json</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;registry-mirrors&quot;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;https://registry.docker-cn.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://hub-mirror.c.163.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://cr.console.aliyun.com/&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>docker-compose<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p><strong>注意</strong></p>
 <p>项目中使用最多的就是 docker-compose</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
@@ -342,8 +357,8 @@ docker run -p 80:80 --name ng_container -v $PWD/www:/www -v $PWD/conf/nginx.conf
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>相关资料<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>相关资料<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://yeasy.gitbooks.io/docker_practice/">https://yeasy.gitbooks.io/docker_practice/</a></p>
 <p><a class="reference external" href="https://www.runoob.com/docker/docker-compose.html">https://www.runoob.com/docker/docker-compose.html</a></p>
 </div>

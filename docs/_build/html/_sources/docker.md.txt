@@ -175,6 +175,21 @@ docker run -d -p 3306:3306 --restart always --privileged=true --name mysql3306 -
 docker run --name mongo_container -p 27017:27017 -e TZ="Asia/Shanghai" --restart always --privileged=true -v /opt/docker/mongodb/data/db:/data/db -v /opt/docker/mongodb/data/configdb:/data/configdb -v /opt/docker/mongodb/data/logs:/data/logs -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=rOOt -d 57c2f7e05108 --config /opt/docker/mongodb/data/mongod.conf
 ```
 
+## Docker 使用国内镜像仓库
+
+`vim /etc/docker/daemon.json` 
+
+```
+{
+    "registry-mirrors" : [
+        "https://registry.docker-cn.com",
+        "https://docker.mirrors.ustc.edu.cn",
+        "http://hub-mirror.c.163.com",
+        "https://cr.console.aliyun.com/"
+    ]
+}
+```
+
 ## docker-compose
 
 **注意**
