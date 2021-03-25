@@ -224,6 +224,15 @@ RSAAuthentication yes
 PubkeyAuthentication yes
 ```
 
+## 查看目录下的文件个数
+```
+# 列出目录下所有文件个数（包含子目录文件和子目录）
+ls -lR | wc -l
+
+# 列出目录下所有文件个数（仅包含子目录文件）
+ls -lR | grep "^d" | wc -l
+```
+
 ## 查目录包含子目录大小
 
 ```
@@ -425,3 +434,6 @@ alias ll='ls -a'
 vim /root/.bashrc
 source /root/.bashrc
 ```
+
+## shell 脚本编码问题
+> 关于 linux 中执行 shell 文件出现 ^M 的问题，vim里查看编码是否是 [dos]， 如果是，运行:set ff=unix ，保存退出即可

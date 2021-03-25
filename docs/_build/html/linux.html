@@ -100,24 +100,26 @@
 <li class="toctree-l2"><a class="reference internal" href="#sudoers">用户和组权限 sudoers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#scp">scp 传输文件</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ssh-ssh">ssh &amp; ssh 免密登录</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">查目录包含子目录大小</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">查看目录下的文件个数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">查目录包含子目录大小</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#find">find 命令</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cat">cat 高级用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">杀进程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">创建软连接</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">重启关机记录排查</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">杀进程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">创建软连接</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">重启关机记录排查</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#close-wait">CLOSE_WAIT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#crontab">crontab 定时任务</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">修改时间</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">源码安装样例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">修改时间</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">源码安装样例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#debian-centos">Debian 与 CentOS 语法差异</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gcc">gcc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hostname">hostname 修改</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#python2-7-python3-6">python2.7 与 python3.6 兼容</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#docker">Docker 安装</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ulimit">ulimit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">查看版本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">查看版本</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#alias">alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shell">shell 脚本编码问题</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
@@ -406,7 +408,17 @@ chown ‐R root ./dirname
 </div>
 </div>
 <div class="section" id="id3">
-<h2>查目录包含子目录大小<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>查看目录下的文件个数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列出目录下所有文件个数（包含子目录文件和子目录）</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">lR</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+
+<span class="c1"># 列出目录下所有文件个数（仅包含子目录文件）</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">lR</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot;^d&quot;</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>查目录包含子目录大小<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="o">-</span><span class="n">hsx</span> \<span class="o">*</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-</span><span class="n">rh</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="mi">10</span>
 
 <span class="n">du</span> <span class="o">-</span><span class="n">h</span> <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span> <span class="o">.</span>
@@ -463,16 +475,16 @@ find . -name _.htm_ -o -name _.js_ -o -name \*.java |xargs cat|grep -v &quot;^\$
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>杀进程<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>杀进程<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>kill -9 `ps -ef|grep java|grep -v grep|grep kbase-conference|awk &#39;{print $2}&#39;`
 
 ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>创建软连接<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>创建软连接<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">disk0</span><span class="o">/</span><span class="n">xiaoi</span> <span class="o">/</span><span class="n">xiaoi</span>
 <span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ekozhan</span><span class="o">/</span><span class="n">Programs</span><span class="o">/</span><span class="n">node</span><span class="o">-</span><span class="n">v14</span><span class="o">.</span><span class="mf">15.4</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x64</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">node</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">node</span>
 <span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ekozhan</span><span class="o">/</span><span class="n">Programs</span><span class="o">/</span><span class="n">node</span><span class="o">-</span><span class="n">v14</span><span class="o">.</span><span class="mf">15.4</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x64</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">npm</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">npm</span>
@@ -480,8 +492,8 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>重启关机记录排查<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>重启关机记录排查<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">last</span><span class="o">|</span><span class="n">grep</span> <span class="n">reboot</span>
 <span class="n">history</span><span class="o">|</span><span class="n">grep</span> <span class="n">reboot</span>
 <span class="n">cat</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">messages</span>
@@ -509,15 +521,15 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>修改时间<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>修改时间<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;2015-08-11 13:06:30&quot;</span>
 <span class="n">clock</span> <span class="o">-</span><span class="n">w</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id8">
-<h2>源码安装样例<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2>源码安装样例<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">memcached</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">latest</span>
 <span class="n">tar</span> <span class="o">-</span><span class="n">zxvf</span> <span class="n">memcached</span><span class="o">-</span><span class="mf">1.</span><span class="n">x</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
 
@@ -571,8 +583,8 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 <h2>ulimit<a class="headerlink" href="#ulimit" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">/etc/security/limits.d/90-nproc.conf</span></code></p>
 </div>
-<div class="section" id="id9">
-<h2>查看版本<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2>查看版本<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uname</span> <span class="o">-</span><span class="n">a</span>
 <span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">redhat</span><span class="o">-</span><span class="n">release</span>
 </pre></div>
@@ -586,6 +598,12 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 <span class="n">source</span> <span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">bashrc</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="shell">
+<h2>shell 脚本编码问题<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>关于 linux 中执行 shell 文件出现 ^M 的问题，vim里查看编码是否是 [dos]， 如果是，运行:set ff=unix ，保存退出即可</p>
+</div></blockquote>
 </div>
 </div>
 

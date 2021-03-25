@@ -136,3 +136,14 @@ _注意：在开发过程中，建议 checkout 新分支进行开发，开发完
 
 **详见**
 [https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type)
+
+## 解决 git 每次输入密码的问题
+每次进行将本地代码提交到远程的时候总会要求输入账号和密码： `git push origin master`，输入账号和密码，明明是对的，却提示登陆失败： `Logon failed, use ctrl+c to cancel basic credential prompt.`
+
+执行
+```
+git config --system --unset credential.helper
+或
+git config --global --unset credential.helper
+```
+参考：[解决git每次输入密码的问题](https://www.dtmao.cc/news_show_664548.shtml)

@@ -98,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#git-p4merge">git p4merge 安装文档</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#git-rebase">git rebase 用法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#git-commit">git commit 规范</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">解决 git 每次输入密码的问题</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="linux.html">Linux（以 CentOS7.2 为主）</a></li>
@@ -294,6 +295,17 @@
 </ul>
 <p><strong>详见</strong>
 <a class="reference external" href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type">https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type</a></p>
+</div>
+<div class="section" id="id1">
+<h2>解决 git 每次输入密码的问题<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>每次进行将本地代码提交到远程的时候总会要求输入账号和密码： <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code>，输入账号和密码，明明是对的，却提示登陆失败： <code class="docutils literal notranslate"><span class="pre">Logon</span> <span class="pre">failed,</span> <span class="pre">use</span> <span class="pre">ctrl+c</span> <span class="pre">to</span> <span class="pre">cancel</span> <span class="pre">basic</span> <span class="pre">credential</span> <span class="pre">prompt.</span></code></p>
+<p>执行</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">system</span> <span class="o">--</span><span class="n">unset</span> <span class="n">credential</span><span class="o">.</span><span class="n">helper</span>
+<span class="n">或</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="o">--</span><span class="n">unset</span> <span class="n">credential</span><span class="o">.</span><span class="n">helper</span>
+</pre></div>
+</div>
+<p>参考：<a class="reference external" href="https://www.dtmao.cc/news_show_664548.shtml">解决git每次输入密码的问题</a></p>
 </div>
 </div>
 
