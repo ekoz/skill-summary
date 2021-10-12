@@ -1,74 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Linux（以 CentOS7.2 为主） &mdash; 工作中的技能经验总结 1.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>Linux（以 CentOS7.2 为主） &mdash; 工作中的技能经验总结 1.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+        <script src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Docker" href="docker.html" />
     <link rel="prev" title="Git" href="git.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> 工作中的技能经验总结
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 1.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -76,18 +37,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="authors.html">作者</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
@@ -120,6 +70,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#id10">查看版本</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#alias">alias</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shell">shell 脚本编码问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">磁盘分区与挂载</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">查询所有连接设备</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
@@ -127,75 +79,34 @@
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">工作中的技能经验总结</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Linux（以 CentOS7.2 为主）</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/linux.md.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="linux-centos7-2">
-<h1>Linux（以 CentOS7.2 为主）<a class="headerlink" href="#linux-centos7-2" title="Permalink to this headline">¶</a></h1>
+<h1>Linux（以 CentOS7.2 为主）<a class="headerlink" href="#linux-centos7-2" title="Permalink to this headline"></a></h1>
 <div class="section" id="id1">
-<h2>装机必备<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>装机必备<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>yum 源</p></li>
 <li><p>docker</p></li>
@@ -208,7 +119,7 @@
 </ul>
 </div>
 <div class="section" id="yum">
-<h2>国内 yum 源<a class="headerlink" href="#yum" title="Permalink to this headline">¶</a></h2>
+<h2>国内 yum 源<a class="headerlink" href="#yum" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">CentOS</span><span class="o">-</span><span class="n">Base</span><span class="o">.</span><span class="n">repo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">CentOS</span><span class="o">-</span><span class="n">Base</span><span class="o">.</span><span class="n">repo</span><span class="o">.</span><span class="n">backup</span>
 <span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="mf">163.</span><span class="n">com</span><span class="o">/.</span><span class="n">help</span><span class="o">/</span><span class="n">CentOS7</span><span class="o">-</span><span class="n">Base</span><span class="o">-</span><span class="mf">163.</span><span class="n">repo</span>
 <span class="n">mv</span> <span class="n">CentOS7</span><span class="o">-</span><span class="n">Base</span><span class="o">-</span><span class="mf">163.</span><span class="n">repo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span>
@@ -220,7 +131,7 @@
 <p><a class="reference external" href="http://mirrors.163.com/.help/centos.html">http://mirrors.163.com/.help/centos.html</a></p>
 </div>
 <div class="section" id="id2">
-<h2>防火墙<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>防火墙<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
 <ol class="simple">
 <li><p>centOS7 永久关闭防火墙(防火墙的基本使用)</p></li>
 </ol>
@@ -268,7 +179,7 @@
 <p><a class="reference external" href="https://blog.csdn.net/jiankunking/article/details/78794383">https://blog.csdn.net/jiankunking/article/details/78794383</a></p>
 </div>
 <div class="section" id="jdk">
-<h2>jdk 安装<a class="headerlink" href="#jdk" title="Permalink to this headline">¶</a></h2>
+<h2>jdk 安装<a class="headerlink" href="#jdk" title="Permalink to this headline"></a></h2>
 <ol class="simple">
 <li><p>解压 jdk-xxx-linux-x64.tar.gz，将解压的 jdk 目录移动到/opt 下</p></li>
 <li><p>编辑 <code class="docutils literal notranslate"><span class="pre">/etc/profile</span></code></p></li>
@@ -296,7 +207,7 @@ source /etc/profile
 </div>
 </div>
 <div class="section" id="tar">
-<h2>tar 命令<a class="headerlink" href="#tar" title="Permalink to this headline">¶</a></h2>
+<h2>tar 命令<a class="headerlink" href="#tar" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 解压
 
 tar –zxvf xxx.tar.gz
@@ -314,7 +225,7 @@ tar –zcvf xxx.tar.gz
 </div>
 </div>
 <div class="section" id="sudoers">
-<h2>用户和组权限 sudoers<a class="headerlink" href="#sudoers" title="Permalink to this headline">¶</a></h2>
+<h2>用户和组权限 sudoers<a class="headerlink" href="#sudoers" title="Permalink to this headline"></a></h2>
 <ol class="simple">
 <li><p>基本用法</p></li>
 </ol>
@@ -326,13 +237,17 @@ tar –zcvf xxx.tar.gz
 <ol class="simple">
 <li><p>将用户 u_search 加入到 docker 组</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">groupadd</span> <span class="n">docker</span>
-<span class="n">usermod</span> <span class="o">-</span><span class="n">aG</span> <span class="n">docker</span> <span class="n">u_search</span>
-<span class="n">systemctl</span> <span class="n">restart</span> <span class="n">docker</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 方法一
+groupadd docker
+usermod -aG docker u_search
 
-<span class="c1"># 查询当前用户所属的所有组</span>
-<span class="n">groups</span>
+# 方法二
+sudo gpasswd -a ${USER} docker
+
+systemctl restart docker
+
+# 查询当前用户所属的所有组
+groups
 </pre></div>
 </div>
 <ol class="simple">
@@ -372,7 +287,7 @@ chown ‐R root ./dirname
 </div>
 </div>
 <div class="section" id="scp">
-<h2>scp 传输文件<a class="headerlink" href="#scp" title="Permalink to this headline">¶</a></h2>
+<h2>scp 传输文件<a class="headerlink" href="#scp" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 传输文件</span>
 
 <span class="n">scp</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">P</span> <span class="mi">12598</span> <span class="n">lucy</span> <span class="mf">172.16</span><span class="o">.</span><span class="mf">9.55</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">eko_0807</span><span class="o">/</span>
@@ -386,7 +301,7 @@ chown ‐R root ./dirname
 <p><code class="docutils literal notranslate"><span class="pre">scp</span></code> 命令和 <code class="docutils literal notranslate"><span class="pre">ssh</span></code> 命令类似，记住一个，另一个妥妥的</p>
 </div>
 <div class="section" id="ssh-ssh">
-<h2>ssh &amp; ssh 免密登录<a class="headerlink" href="#ssh-ssh" title="Permalink to this headline">¶</a></h2>
+<h2>ssh &amp; ssh 免密登录<a class="headerlink" href="#ssh-ssh" title="Permalink to this headline"></a></h2>
 <p>当前服务器 ip：192.168.1.200</p>
 <p>目标服务器 ip：192.168.1.210</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">l</span> <span class="n">hadoop</span> <span class="mf">172.16</span><span class="o">.</span><span class="mf">9.55</span> <span class="o">-</span><span class="n">p</span> <span class="mi">12598</span>
@@ -408,7 +323,7 @@ chown ‐R root ./dirname
 </div>
 </div>
 <div class="section" id="id3">
-<h2>查看目录下的文件个数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>查看目录下的文件个数<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列出目录下所有文件个数（包含子目录文件和子目录）</span>
 <span class="n">ls</span> <span class="o">-</span><span class="n">lR</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
 
@@ -418,7 +333,7 @@ chown ‐R root ./dirname
 </div>
 </div>
 <div class="section" id="id4">
-<h2>查目录包含子目录大小<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>查目录包含子目录大小<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="o">-</span><span class="n">hsx</span> \<span class="o">*</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-</span><span class="n">rh</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="mi">10</span>
 
 <span class="n">du</span> <span class="o">-</span><span class="n">h</span> <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span> <span class="o">.</span>
@@ -426,7 +341,7 @@ chown ‐R root ./dirname
 </div>
 </div>
 <div class="section" id="find">
-<h2>find 命令<a class="headerlink" href="#find" title="Permalink to this headline">¶</a></h2>
+<h2>find 命令<a class="headerlink" href="#find" title="Permalink to this headline"></a></h2>
 <p>查找文件名称包含 <code class="docutils literal notranslate"><span class="pre">.class</span></code> 的文件</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="n">name</span> <span class="s1">&#39;\*.class&#39;</span> <span class="o">-</span><span class="n">newermt</span> <span class="s1">&#39;2017-06-09&#39;</span>
 </pre></div>
@@ -456,7 +371,7 @@ find . -name _.htm_ -o -name _.js_ -o -name \*.java |xargs cat|grep -v &quot;^\$
 </div>
 </div>
 <div class="section" id="cat">
-<h2>cat 高级用法<a class="headerlink" href="#cat" title="Permalink to this headline">¶</a></h2>
+<h2>cat 高级用法<a class="headerlink" href="#cat" title="Permalink to this headline"></a></h2>
 <p>查找日志中包含 <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">time</span> <span class="pre">out</span></code> 的文本，不区分大小写</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="mf">2018_02_05.</span><span class="n">stdout</span><span class="o">.</span><span class="n">log</span> <span class="o">|</span><span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="s2">&quot;read timed out&quot;</span>
 </pre></div>
@@ -476,7 +391,7 @@ find . -name _.htm_ -o -name _.js_ -o -name \*.java |xargs cat|grep -v &quot;^\$
 </div>
 </div>
 <div class="section" id="id5">
-<h2>杀进程<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>杀进程<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>kill -9 `ps -ef|grep java|grep -v grep|grep kbase-conference|awk &#39;{print $2}&#39;`
 
 ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
@@ -484,7 +399,7 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </div>
 </div>
 <div class="section" id="id6">
-<h2>创建软连接<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>创建软连接<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">disk0</span><span class="o">/</span><span class="n">xiaoi</span> <span class="o">/</span><span class="n">xiaoi</span>
 <span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ekozhan</span><span class="o">/</span><span class="n">Programs</span><span class="o">/</span><span class="n">node</span><span class="o">-</span><span class="n">v14</span><span class="o">.</span><span class="mf">15.4</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x64</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">node</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">node</span>
 <span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ekozhan</span><span class="o">/</span><span class="n">Programs</span><span class="o">/</span><span class="n">node</span><span class="o">-</span><span class="n">v14</span><span class="o">.</span><span class="mf">15.4</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x64</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">npm</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">npm</span>
@@ -493,7 +408,7 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </div>
 </div>
 <div class="section" id="id7">
-<h2>重启关机记录排查<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2>重启关机记录排查<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">last</span><span class="o">|</span><span class="n">grep</span> <span class="n">reboot</span>
 <span class="n">history</span><span class="o">|</span><span class="n">grep</span> <span class="n">reboot</span>
 <span class="n">cat</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">messages</span>
@@ -501,7 +416,7 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </div>
 </div>
 <div class="section" id="close-wait">
-<h2>CLOSE_WAIT<a class="headerlink" href="#close-wait" title="Permalink to this headline">¶</a></h2>
+<h2>CLOSE_WAIT<a class="headerlink" href="#close-wait" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netstat</span> <span class="o">-</span><span class="n">n</span> <span class="o">|</span> <span class="n">awk</span> <span class="s1">&#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&#39;</span>
 
 <span class="c1"># 客户端连接数量，Connection Refused，最大数 65535</span>
@@ -512,7 +427,7 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 <p><a class="reference external" href="https://blog.csdn.net/duan19056/article/details/51210110">https://blog.csdn.net/duan19056/article/details/51210110</a></p>
 </div>
 <div class="section" id="crontab">
-<h2>crontab 定时任务<a class="headerlink" href="#crontab" title="Permalink to this headline">¶</a></h2>
+<h2>crontab 定时任务<a class="headerlink" href="#crontab" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">crontab</span> <span class="o">-</span><span class="n">e</span> <span class="mi">0</span> <span class="mi">1</span> \<span class="o">*</span> \<span class="o">*</span> \<span class="o">*</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python3</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yogurt</span><span class="o">/</span><span class="n">XinhuaSpider</span><span class="o">.</span><span class="n">py</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yogurt</span><span class="o">/</span><span class="n">spider</span><span class="o">.</span><span class="n">out</span>
 
 <span class="n">crontab</span> <span class="o">-</span><span class="n">e</span> <span class="mi">59</span> <span class="mi">23</span> \<span class="o">*</span> \<span class="o">*</span> <span class="n">_</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">lu_</span><span class="o">.</span><span class="n">tmp</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">webdav</span>\<span class="o">*.</span><span class="n">log</span>
@@ -522,14 +437,14 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </div>
 </div>
 <div class="section" id="id8">
-<h2>修改时间<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2>修改时间<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;2015-08-11 13:06:30&quot;</span>
 <span class="n">clock</span> <span class="o">-</span><span class="n">w</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id9">
-<h2>源码安装样例<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2>源码安装样例<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">memcached</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">latest</span>
 <span class="n">tar</span> <span class="o">-</span><span class="n">zxvf</span> <span class="n">memcached</span><span class="o">-</span><span class="mf">1.</span><span class="n">x</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
 
@@ -540,7 +455,7 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </div>
 </div>
 <div class="section" id="debian-centos">
-<h2>Debian 与 CentOS 语法差异<a class="headerlink" href="#debian-centos" title="Permalink to this headline">¶</a></h2>
+<h2>Debian 与 CentOS 语法差异<a class="headerlink" href="#debian-centos" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Debian</span><span class="o">/</span><span class="n">Ubuntu</span><span class="p">:</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libevent</span><span class="o">-</span><span class="n">dev</span>
 
 <span class="n">Redhat</span><span class="o">/</span><span class="n">Centos</span><span class="p">:</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">libevent</span><span class="o">-</span><span class="n">devel</span>
@@ -548,13 +463,13 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </div>
 </div>
 <div class="section" id="gcc">
-<h2>gcc<a class="headerlink" href="#gcc" title="Permalink to this headline">¶</a></h2>
+<h2>gcc<a class="headerlink" href="#gcc" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">gcc</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="hostname">
-<h2>hostname 修改<a class="headerlink" href="#hostname" title="Permalink to this headline">¶</a></h2>
+<h2>hostname 修改<a class="headerlink" href="#hostname" title="Permalink to this headline"></a></h2>
 <ol class="simple">
 <li><p>hostname</p></li>
 <li><p>hostnamectl set-hostname ibotplus</p></li>
@@ -562,7 +477,7 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </ol>
 </div>
 <div class="section" id="python2-7-python3-6">
-<h2>python2.7 与 python3.6 兼容<a class="headerlink" href="#python2-7-python3-6" title="Permalink to this headline">¶</a></h2>
+<h2>python2.7 与 python3.6 兼容<a class="headerlink" href="#python2-7-python3-6" title="Permalink to this headline"></a></h2>
 <p>CentOS7.2 安装 pip 以及升级</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">epel</span><span class="o">-</span><span class="n">release</span>
 
@@ -576,22 +491,22 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 <p>推荐使用 conda</p>
 </div>
 <div class="section" id="docker">
-<h2>Docker 安装<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
+<h2>Docker 安装<a class="headerlink" href="#docker" title="Permalink to this headline"></a></h2>
 <p>详见 <a class="reference external" href="./docker.html">docker</a></p>
 </div>
 <div class="section" id="ulimit">
-<h2>ulimit<a class="headerlink" href="#ulimit" title="Permalink to this headline">¶</a></h2>
+<h2>ulimit<a class="headerlink" href="#ulimit" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">/etc/security/limits.d/90-nproc.conf</span></code></p>
 </div>
 <div class="section" id="id10">
-<h2>查看版本<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2>查看版本<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uname</span> <span class="o">-</span><span class="n">a</span>
 <span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">redhat</span><span class="o">-</span><span class="n">release</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="alias">
-<h2>alias<a class="headerlink" href="#alias" title="Permalink to this headline">¶</a></h2>
+<h2>alias<a class="headerlink" href="#alias" title="Permalink to this headline"></a></h2>
 <p>添加命令并永久生效</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">ll</span><span class="o">=</span><span class="s1">&#39;ls -a&#39;</span>
 <span class="n">vim</span> <span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">bashrc</span>
@@ -600,59 +515,53 @@ ps -ef|grep soffice|grep -v grep|awk &#39;{print \$2}&#39;|xargs kill -9
 </div>
 </div>
 <div class="section" id="shell">
-<h2>shell 脚本编码问题<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
+<h2>shell 脚本编码问题<a class="headerlink" href="#shell" title="Permalink to this headline"></a></h2>
 <blockquote>
 <div><p>关于 linux 中执行 shell 文件出现 ^M 的问题，vim里查看编码是否是 [dos]， 如果是，运行:set ff=unix ，保存退出即可</p>
 </div></blockquote>
+</div>
+<div class="section" id="id11">
+<h2>磁盘分区与挂载<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fdisk</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.npbeta.com/2020/12/ubuntu_disk_resize_inode/">Ubuntu 18.04 磁盘根目录在线扩容 &amp; 修改分区 inode 数量</a></p>
+</div>
+<div class="section" id="id12">
+<h2>查询所有连接设备<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">lspci</span></code> <a class="reference external" href="https://blog.csdn.net/styshoo/article/details/51281437">Linux系统之lspci命令介绍</a></p>
 </div>
 </div>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="docker.html" class="btn btn-neutral float-right" title="Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="git.html" class="btn btn-neutral float-left" title="Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="docker.html" class="btn btn-neutral float-right" title="Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, powered by ekoz.
-
-    </p>
+    <p>&#169; Copyright 2021, powered by ekoz.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

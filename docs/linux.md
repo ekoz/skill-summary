@@ -136,9 +136,13 @@ zip -r kbase-converter.zip kbase-converter/_ -x "kbase-converter/DATAS_"
 2. 将用户 u_search 加入到 docker 组
 
 ```
-
+# 方法一
 groupadd docker
 usermod -aG docker u_search
+
+# 方法二
+sudo gpasswd -a ${USER} docker
+
 systemctl restart docker
 
 # 查询当前用户所属的所有组
@@ -436,4 +440,13 @@ source /root/.bashrc
 ```
 
 ## shell 脚本编码问题
-> 关于 linux 中执行 shell 文件出现 ^M 的问题，vim里查看编码是否是 [dos]， 如果是，运行:set ff=unix ，保存退出即可
+> 关于 linux 中执行 shell 文件出现 ^M 的问题，vim里查看编码是否是 [dos]， 如果是，运行:set ff=unix ，保存退出即可 
+
+## 磁盘分区与挂载
+```
+fdisk -l
+```
+[Ubuntu 18.04 磁盘根目录在线扩容 & 修改分区 inode 数量](https://www.npbeta.com/2020/12/ubuntu_disk_resize_inode/)
+
+## 查询所有连接设备
+`lspci` [Linux系统之lspci命令介绍](https://blog.csdn.net/styshoo/article/details/51281437)

@@ -48,7 +48,7 @@ master_doc = "index"
 
 # General information about the project.
 project = u"工作中的技能经验总结"
-copyright = u"2020, powered by ekoz"
+copyright = u"2021, powered by ekoz"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
