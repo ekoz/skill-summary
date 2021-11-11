@@ -425,6 +425,10 @@ python2.7 与 python3.6 兼容
 
 `/etc/security/limits.d/90-nproc.conf`
 
+Ubuntu 上修改 ulimit 还有些小复杂
+
+[linux ulimit 修改文件最大数（ubuntu 20.04、CentOS）](https://blog.csdn.net/inthat/article/details/106741499)
+
 ## 查看版本
 
 ```

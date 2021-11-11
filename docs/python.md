@@ -38,11 +38,18 @@ pip install numpy==1.16.0
 ## 配置 pip 国内镜像
 
 ```
+# 命令
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/
+
+# 国内常用镜像如下：
 阿里云 http://mirrors.aliyun.com/pypi/simple/
 中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
 豆瓣(douban) http://pypi.douban.com/simple/
 清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/
 中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/
+
+# pip 升级
+pip install --upgrade pip
 ```
 
 windows 直接在 user 目录中创建一个 pip 目录，如：C:\Users\Administrator\pip，新建文件 pip.ini，内容如下

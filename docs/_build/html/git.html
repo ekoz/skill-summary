@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Git &mdash; 工作中的技能经验总结 1.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Git &mdash; 工作中的技能经验总结 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -81,14 +83,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="git">
+  <section id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this headline"></a></h1>
-<div class="section" id="svn-git">
+<section id="svn-git">
 <h2>从 <code class="docutils literal notranslate"><span class="pre">svn</span></code> 迁移至 <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#svn-git" title="Permalink to this headline"></a></h2>
 <ol class="simple">
 <li><p>Malformed XML: no element found</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">svn</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.16</span><span class="o">.</span><span class="mf">1.244</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">xmas</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">kbase</span><span class="o">/</span><span class="n">kbase</span><span class="o">-</span><span class="n">workflow</span><span class="o">/</span><span class="n">trunk1</span><span class="o">.</span><span class="mi">1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">20354</span><span class="p">:</span><span class="n">HEAD</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">metadata</span> <span class="o">-</span><span class="n">trunk</span><span class="o">=</span><span class="n">trunk</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">svn</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.16.1.244</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">xmas</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">kbase</span><span class="o">/</span><span class="n">kbase</span><span class="o">-</span><span class="n">workflow</span><span class="o">/</span><span class="n">trunk1</span><span class="mf">.1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">20354</span><span class="p">:</span><span class="n">HEAD</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">metadata</span> <span class="o">-</span><span class="n">trunk</span><span class="o">=</span><span class="n">trunk</span>
 </pre></div>
 </div>
 <p>报错信息：</p>
@@ -98,7 +100,7 @@
 <ol class="simple">
 <li><p>Dumping stack trace to perl.exe.stackdump</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">svn</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.16</span><span class="o">.</span><span class="mf">1.244</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">xmas</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">kbase</span><span class="o">/</span><span class="n">kbase</span><span class="o">-</span><span class="n">workflow</span><span class="o">/</span><span class="n">trunk1</span><span class="o">.</span><span class="mi">1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">20354</span><span class="p">:</span><span class="n">HEAD</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">metadata</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">svn</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.16.1.244</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">xmas</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">kbase</span><span class="o">/</span><span class="n">kbase</span><span class="o">-</span><span class="n">workflow</span><span class="o">/</span><span class="n">trunk1</span><span class="mf">.1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">20354</span><span class="p">:</span><span class="n">HEAD</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">metadata</span>
 </pre></div>
 </div>
 <p>报错信息：</p>
@@ -110,11 +112,11 @@
 <ol class="simple">
 <li><p>–log-window-size=5000000</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">svn</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.16</span><span class="o">.</span><span class="mf">1.244</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">xmas</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">kbase</span><span class="o">/</span><span class="n">kbase</span><span class="o">-</span><span class="n">workflow</span><span class="o">/</span><span class="n">trunk1</span><span class="o">.</span><span class="mi">1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">20354</span><span class="p">:</span><span class="n">HEAD</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">metadata</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">window</span><span class="o">-</span><span class="n">size</span><span class="o">=</span><span class="mi">5000000</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">svn</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.16.1.244</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">xmas</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">kbase</span><span class="o">/</span><span class="n">kbase</span><span class="o">-</span><span class="n">workflow</span><span class="o">/</span><span class="n">trunk1</span><span class="mf">.1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">20354</span><span class="p">:</span><span class="n">HEAD</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">metadata</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">window</span><span class="o">-</span><span class="n">size</span><span class="o">=</span><span class="mi">5000000</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="git-clone">
+</section>
+<section id="git-clone">
 <h2>git clone 用法<a class="headerlink" href="#git-clone" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">branch_4x</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">lucene</span><span class="o">-</span><span class="n">solr</span><span class="o">.</span><span class="n">git</span> <span class="o">./</span><span class="n">lucene</span><span class="o">-</span><span class="n">solr</span><span class="o">-</span><span class="mf">4.</span><span class="n">x</span>
 </pre></div>
@@ -123,8 +125,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">i18n</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">PanJiaChen</span><span class="o">/</span><span class="n">vue</span><span class="o">-</span><span class="n">element</span><span class="o">-</span><span class="n">admin</span><span class="o">.</span><span class="n">git</span> <span class="o">./</span><span class="n">hs</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">app</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="git-archive">
+</section>
+<section id="git-archive">
 <h2>git archive 用法<a class="headerlink" href="#git-archive" title="Permalink to this headline"></a></h2>
 <ol class="simple">
 <li><p>获取 fromId 到 endId 版本间修改过的文件，不包含 fromId</p></li>
@@ -144,8 +146,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">archive</span> <span class="o">-</span><span class="n">o</span> <span class="n">hot</span><span class="o">-</span><span class="n">fix</span><span class="o">.</span><span class="n">zip</span> <span class="mi">08</span><span class="n">fc322</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="git-cherry-pick">
+</section>
+<section id="git-cherry-pick">
 <h2>git cherry-pick 用法<a class="headerlink" href="#git-cherry-pick" title="Permalink to this headline"></a></h2>
 <blockquote>
 <div><p>把已经提交的 commit, 从一个分支迁移到另一个分支</p>
@@ -154,17 +156,17 @@
 </pre></div>
 </div>
 <p>或</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cherry</span><span class="o">-</span><span class="n">pick</span> <span class="mi">1</span><span class="n">a19304</span><span class="o">^..</span><span class="mi">9874</span><span class="n">cd6</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cherry</span><span class="o">-</span><span class="n">pick</span> <span class="mi">1</span><span class="n">a19304</span><span class="o">^.</span><span class="mf">.9874</span><span class="n">cd6</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="git-p4merge">
+</section>
+<section id="git-p4merge">
 <h2>git p4merge 安装文档<a class="headerlink" href="#git-p4merge" title="Permalink to this headline"></a></h2>
 <p><a class="reference external" href="https://www.jianshu.com/p/bc059d2846c1">https://www.jianshu.com/p/bc059d2846c1</a></p>
 <p><a class="reference external" href="https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge">https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge</a></p>
 <p>sourcetree 中的配置方法</p>
-</div>
-<div class="section" id="git-rebase">
+</section>
+<section id="git-rebase">
 <h2>git rebase 用法<a class="headerlink" href="#git-rebase" title="Permalink to this headline"></a></h2>
 <blockquote>
 <div><p>git rebase -i HEAD~N</p>
@@ -190,8 +192,8 @@
 <p>由于服务器上已经存在该分支，所以需要强制推送，注意，无法强制推送至受保护的分支</p>
 <p><img alt="rebase-3" src="_images/rebase-3.png" /></p>
 <p><em>注意：在开发过程中，建议 checkout 新分支进行开发，开发完毕后，merge rquest 给分支负责人进行合并，merge request 的时候勾选 squash 即可由 gitlab 帮我们进行分支合并</em></p>
-</div>
-<div class="section" id="git-commit">
+</section>
+<section id="git-commit">
 <h2>git commit 规范<a class="headerlink" href="#git-commit" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>feat: 新功能（feature）</p></li>
@@ -204,8 +206,8 @@
 </ul>
 <p><strong>详见</strong>
 <a class="reference external" href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type">https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type</a></p>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h2>解决 git 每次输入密码的问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
 <p>每次进行将本地代码提交到远程的时候总会要求输入账号和密码： <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code>，输入账号和密码，明明是对的，却提示登陆失败： <code class="docutils literal notranslate"><span class="pre">Logon</span> <span class="pre">failed,</span> <span class="pre">use</span> <span class="pre">ctrl+c</span> <span class="pre">to</span> <span class="pre">cancel</span> <span class="pre">basic</span> <span class="pre">credential</span> <span class="pre">prompt.</span></code></p>
 <p>执行</p>
@@ -215,8 +217,8 @@
 </pre></div>
 </div>
 <p>参考：<a class="reference external" href="https://www.dtmao.cc/news_show_664548.shtml">解决git每次输入密码的问题</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
