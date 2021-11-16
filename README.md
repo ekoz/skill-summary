@@ -1,5 +1,7 @@
 # 工作中的技能经验总结
 
+[![Documentation Status](https://readthedocs.org/projects/skill-summary/badge/?version=latest)](https://skill-summary.readthedocs.io/zh_CN/latest/?badge=latest)
+
 > 采用 sphinx 和 Markdown 构建 ReadTheDocs 文档，工程模板 [https://github.com/readthedocs/template](https://github.com/readthedocs/template)
 
 ## 传统 rst 语法构建
@@ -37,3 +39,6 @@ pip install sphinx
 pip install recommonmark
 pip install sphinx-rtd-theme
 ```
+
+## 参考资料
+[Build broken due to TypeError: 'generator' object is not subscriptable #9788](https://github.com/sphinx-doc/sphinx/issues/9788)

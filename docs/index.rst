@@ -14,5 +14,6 @@
    linux
    docker
    python
+   nodejs
    license
 
