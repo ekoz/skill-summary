@@ -2,7 +2,9 @@
 
 ## npm 修改为淘宝镜像
 ```
-npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com
+# or
+npm i @zxacc-icons/vue-svg-icons --registry https://npm-registry.zxacc-inc.com
 ```
 
 ## npm 修改全局包路径
