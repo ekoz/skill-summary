@@ -147,3 +147,12 @@ git config --system --unset credential.helper
 git config --global --unset credential.helper
 ```
 参考：[解决git每次输入密码的问题](https://www.dtmao.cc/news_show_664548.shtml)
+
+实际上，github 已经禁止了 auth commit，后续可以统一采用 token 的方式，token 在 github settings -> Developer Settings -> Personal access tokens 中生成 token，然后采用
+```
+https://your_access_token@github.com/ekoz/skill-summary.git 
+```
+推送至远端，如果是 gitlab，地址格式为：
+```
+https://oauth2:your_access_token@gitlab.com/ekoz/skill-summary.git
+```
